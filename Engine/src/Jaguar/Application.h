@@ -1,8 +1,8 @@
 #pragma once
 
 #include "Core.h"
-namespace Engine {
-	class ENGINE_API Application
+namespace Jaguar {
+	class JAGUAR_API Application
 	{
 	public:
 		Application();

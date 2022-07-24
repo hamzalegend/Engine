@@ -1,6 +1,6 @@
 #include "Application.h"
 #include <iostream>
-namespace Engine {
+namespace Jaguar {
 
 	Application::Application()
 	{
@@ -12,12 +12,10 @@ namespace Engine {
 
 	void Application::Run()
 	{
-		std::cout << "Running..." << std::endl;
+		
 		while (true)
 		{
 
 		}
 	}
-	
-
 }

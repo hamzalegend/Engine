@@ -1,8 +1,8 @@
 #pragma once
 // for use by client
 
-#include"stdio.h"
+#include "Jaguar/Application.h"
 
-#include "Engine/Application.h"
+#include "Jaguar/log.h"
 
-#include "Engine/EntryPoint.h"
+#include "Jaguar/EntryPoint.h"

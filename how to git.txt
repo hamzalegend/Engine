@@ -1,0 +1,7 @@
+commit and sync with git hub :
+|    git add *
+|    git commit -m "comment" 
+|    git push origin master
+
+add a git submodule to project:
+|    git submodule add "path"

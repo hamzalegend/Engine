@@ -1,18 +1,18 @@
 #include <Engine.h>
 
-class Sandbox : public Engine::Application
+class Sandbox : public Jaguar::Application
 {
 public:
 	Sandbox()
 	{
-
+		
 	};
 	~Sandbox()
 	{
 
 	};
 };
-Engine::Application* Engine::CreateApplication()
+Jaguar::Application* Jaguar::CreateApplication()
 {
 	return new Sandbox();
 }
