@@ -1,5 +1,5 @@
 #include "Application.h"
-#include <iostream>
+
 namespace Jaguar {
 
 	Application::Application()

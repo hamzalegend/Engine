@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Jaguar">
+      <UniqueIdentifier>{DF8592BB-CB27-BD91-B4E2-D0E5A02344E2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Engine.h" />
+    <ClInclude Include="src\Jaguar\Application.h">
+      <Filter>Jaguar</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Jaguar\Core.h">
+      <Filter>Jaguar</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Jaguar\EntryPoint.h">
+      <Filter>Jaguar</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Jaguar\log.h">
+      <Filter>Jaguar</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Jaguar\Application.cpp">
+      <Filter>Jaguar</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jaguar\log.cpp">
+      <Filter>Jaguar</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
