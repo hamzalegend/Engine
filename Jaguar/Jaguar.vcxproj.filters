@@ -16,16 +16,28 @@
     <ClInclude Include="src\Jaguar\EntryPoint.h">
       <Filter>Jaguar</Filter>
     </ClInclude>
-    <ClInclude Include="src\Jaguar\log.h">
+    <ClInclude Include="src\Jaguar\Log\log.h">
       <Filter>Jaguar</Filter>
     </ClInclude>
+    <ClInclude Include="src\Jaguar\Window\Window.h" />
+    <ClInclude Include="src\API\OpenGL\ShaderGL.h" />
+    <ClInclude Include="src\Jaguar\shader.vs" />
+    <ClInclude Include="src\API\OpenGL\BufferGL.h" />
+    <ClInclude Include="src\API\Buffer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Jaguar\Application.cpp">
       <Filter>Jaguar</Filter>
     </ClCompile>
-    <ClCompile Include="src\Jaguar\log.cpp">
+    <ClCompile Include="src\Jaguar\Log\log.cpp">
       <Filter>Jaguar</Filter>
     </ClCompile>
+    <ClCompile Include="src\Jaguar\Window\Window.cpp" />
+    <ClCompile Include="src\API\OpenGL\ShaderGL.cpp" />
+    <ClCompile Include="src\API\OpenGL\BufferGL.cpp" />
+    <ClCompile Include="src\API\Buffer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\Jaguar\shader.fs" />
   </ItemGroup>
 </Project>
