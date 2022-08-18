@@ -1,0 +1,3 @@
+[1] window creation : Window window = Window(WinDimentions, "name", Vec3(ClearColor));
+[2] initializing The API(GLINIT) : if (glewInit() != GLEW_OK)... etc;
+[3] Getting a shader up and running : Shader shader("src/shaders/shader.vs", "src/shaders/shader.fs");

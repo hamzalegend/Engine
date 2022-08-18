@@ -1,17 +1,18 @@
 #pragma once
 #include<string>
 #include "../../Jaguar/Core.h"
+#include "../Shader.h"
 
 namespace Jaguar {
 
-	class Shader
+	class ShaderGL : public Shader
 	{
 	public:
-		Shader(const char* vertexPath, const char* fragmentPath);
-		~Shader();
+		ShaderGL(const char* vertexPath, const char* fragmentPath);
+		~ShaderGL();
 
-		void Bind() const;
-		void UnBind() const;
+		virtual void Bind() const override;
+		virtual void UnBind() const override;
 
 	private:
 		unsigned int m_ID;
@@ -19,7 +20,7 @@ namespace Jaguar {
 		const char* fCode;
 
 		std::string Read(std::string path);
-		void Compile();
+		void Compile() ;
 
 
 	};

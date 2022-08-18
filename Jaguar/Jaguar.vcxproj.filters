@@ -24,6 +24,8 @@
     <ClInclude Include="src\Jaguar\shader.vs" />
     <ClInclude Include="src\API\OpenGL\BufferGL.h" />
     <ClInclude Include="src\API\Buffer.h" />
+    <ClInclude Include="src\Jaguar\Renderer\Renderer.h" />
+    <ClInclude Include="src\API\Shader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Jaguar\Application.cpp">
@@ -36,6 +38,7 @@
     <ClCompile Include="src\API\OpenGL\ShaderGL.cpp" />
     <ClCompile Include="src\API\OpenGL\BufferGL.cpp" />
     <ClCompile Include="src\API\Buffer.cpp" />
+    <ClCompile Include="src\API\Shader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\Jaguar\shader.fs" />

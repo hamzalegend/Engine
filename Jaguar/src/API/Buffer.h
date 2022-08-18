@@ -1,13 +1,10 @@
 #pragma once
-
+#include <vector>
 namespace Jaguar {
 
 	class VertexBuffer
 	{
 	public:
-
-	
-
 		virtual ~VertexBuffer() = default;
 
 		virtual void Bind() const = 0;
@@ -18,6 +15,28 @@ namespace Jaguar {
 	private:
 
 	};
+
+	class VertexArray
+	{
+	public:
+		virtual ~VertexArray() = default;
+
+		virtual void Bind() const = 0;
+		virtual void UnBind() const = 0;
+
+		
+		static VertexArray* Create();
+
+		virtual void AddLayout(unsigned int count) = 0;
+		virtual void Push() = 0;
+
+		
+
+	private:
+
+	};
+
+
 	class IndexBuffer
 	{
 	public:

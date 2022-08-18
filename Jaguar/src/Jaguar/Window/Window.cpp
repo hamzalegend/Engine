@@ -17,6 +17,9 @@ namespace Jaguar
 {
 	m_window = glfwCreateWindow(x, y, name.c_str(), NULL, NULL);
 
+	width = x;
+	height = y;
+
 	if (!m_window)
 	{
 		JR_CORE_ERROR("Could Not Initialize The Main Window");

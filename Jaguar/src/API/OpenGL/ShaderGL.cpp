@@ -9,9 +9,10 @@
 #include <iostream>
 
 
+
 namespace Jaguar{
 
-    Shader::Shader(const char* vertexPath, const char* fragmentPath)
+    ShaderGL::ShaderGL(const char* vertexPath, const char* fragmentPath)
     {
         std::string vertexCode;
         std::string fragmentCode;
@@ -28,7 +29,7 @@ namespace Jaguar{
         
     }
     
-    std::string Shader::Read(std::string filePath)
+    std::string ShaderGL::Read(std::string filePath)
     {
         std::ifstream file;
         std::string code;
@@ -61,7 +62,7 @@ namespace Jaguar{
        
     }
     
-    void Shader::Compile()
+    void ShaderGL::Compile()
     {
         unsigned int vertex, fragment;
         int success;
@@ -76,7 +77,7 @@ namespace Jaguar{
         if (!success)
         {
             glGetShaderInfoLog(vertex, 512, NULL, infoLog);
-            JR_CORE_ERROR("Error compiling vertex shader", infoLog);
+            JR_CORE_ERROR("Error compiling vertex shader \"{0}\"", infoLog);
             return;
         };
     
@@ -89,7 +90,7 @@ namespace Jaguar{
         if (!success)
         {
             glGetShaderInfoLog(vertex, 512, NULL, infoLog);
-            JR_CORE_ERROR("Error compiling fragment shader", infoLog);
+            JR_CORE_ERROR("Error compiling fragment shader \"{0}\"", infoLog);
         };
     
         // shader Program
@@ -102,7 +103,7 @@ namespace Jaguar{
         if (!success)
         {
             glGetProgramInfoLog(m_ID, 512, NULL, infoLog);
-            JR_CORE_ERROR("Error compiling & linking shader program", infoLog);
+            JR_CORE_ERROR("Error compiling & linking shader program \"{0}\"", infoLog);
             return;
         }
     
@@ -114,17 +115,17 @@ namespace Jaguar{
         
     }
     
-    void Shader::Bind() const
+    void ShaderGL::Bind() const
     {
         glUseProgram(m_ID);
     }
     
-    void Shader::UnBind() const
+    void ShaderGL::UnBind() const
     {
         glUseProgram(0);
     }
-    
-    Shader::~Shader()
+
+    ShaderGL::~ShaderGL()
     {
         glDeleteProgram(m_ID);
     }
