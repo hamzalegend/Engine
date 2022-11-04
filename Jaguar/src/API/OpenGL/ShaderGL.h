@@ -14,6 +14,8 @@ namespace Jaguar {
 		virtual void Bind() const override;
 		virtual void UnBind() const override;
 
+		virtual void SetUniform(Mat4 Value) override;
+
 	private:
 		unsigned int m_ID;
 		const char* vCode;

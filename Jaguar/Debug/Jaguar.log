@@ -1,0 +1,103 @@
+﻿  Shader.cpp
+C:\code\c++\Jaguar\Jaguar\src\Jaguar\Renderer\Renderer.h(11): warning C4091: 'static ': ignored on left of 'Jaguar::RendererAPI::API' when no variable is declared
+  Buffer.cpp
+C:\code\c++\Jaguar\Jaguar\src\Jaguar\Renderer\Renderer.h(11): warning C4091: 'static ': ignored on left of 'Jaguar::RendererAPI::API' when no variable is declared
+  BufferGL.cpp
+C:\code\c++\Jaguar\Jaguar\src\Jaguar\Log\log.h(18,42): warning C4251: 'Jaguar::Log::S_CoreLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Jaguar::Log'
+C:\code\c++\Jaguar\Jaguar\vendor\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
+C:\code\c++\Jaguar\Jaguar\src\Jaguar\Log\log.h(19,42): warning C4251: 'Jaguar::Log::S_ClientLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Jaguar::Log'
+C:\code\c++\Jaguar\Jaguar\vendor\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
+C:\code\c++\Jaguar\Jaguar\src\API\OpenGL\BufferGL.cpp(66,21): warning C4018: '<': signed/unsigned mismatch
+  ShaderGL.cpp
+C:\code\c++\Jaguar\Jaguar\src\Jaguar\Log\log.h(18,42): warning C4251: 'Jaguar::Log::S_CoreLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Jaguar::Log'
+C:\code\c++\Jaguar\Jaguar\vendor\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
+C:\code\c++\Jaguar\Jaguar\src\Jaguar\Log\log.h(19,42): warning C4251: 'Jaguar::Log::S_ClientLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Jaguar::Log'
+C:\code\c++\Jaguar\Jaguar\vendor\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
+  Application.cpp
+C:\code\c++\Jaguar\Jaguar\src\Jaguar\Log\log.h(18,42): warning C4251: 'Jaguar::Log::S_CoreLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Jaguar::Log'
+C:\code\c++\Jaguar\Jaguar\vendor\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
+C:\code\c++\Jaguar\Jaguar\src\Jaguar\Log\log.h(19,42): warning C4251: 'Jaguar::Log::S_ClientLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Jaguar::Log'
+C:\code\c++\Jaguar\Jaguar\vendor\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
+C:\code\c++\Jaguar\Jaguar\src\Jaguar\Renderer\Renderer.h(11): warning C4091: 'static ': ignored on left of 'Jaguar::RendererAPI::API' when no variable is declared
+C:\code\c++\Jaguar\Jaguar\src\Jaguar\Application.cpp(22,21): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\code\c++\Jaguar\Jaguar\src\Jaguar\Application.cpp(112,68): warning C4244: 'argument': conversion from 'T' to 'GLsizei', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\code\c++\Jaguar\Jaguar\src\Jaguar\Application.cpp(112,42): warning C4244: 'argument': conversion from 'T' to 'GLsizei', possible loss of data
+          with
+          [
+              T=float
+          ]
+  log.cpp
+C:\code\c++\Jaguar\Jaguar\src\Jaguar\Log\log.h(18,42): warning C4251: 'Jaguar::Log::S_CoreLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Jaguar::Log'
+C:\code\c++\Jaguar\Jaguar\vendor\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
+C:\code\c++\Jaguar\Jaguar\src\Jaguar\Log\log.h(19,42): warning C4251: 'Jaguar::Log::S_ClientLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Jaguar::Log'
+C:\code\c++\Jaguar\Jaguar\vendor\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
+  Window.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
+C:\code\c++\Jaguar\Vendor\glfw\include\GLFW\glfw3.h(123): message : see previous definition of 'APIENTRY'
+C:\code\c++\Jaguar\Jaguar\src\Jaguar\Log\log.h(18,42): warning C4251: 'Jaguar::Log::S_CoreLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Jaguar::Log'
+C:\code\c++\Jaguar\Jaguar\vendor\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
+C:\code\c++\Jaguar\Jaguar\src\Jaguar\Log\log.h(19,42): warning C4251: 'Jaguar::Log::S_ClientLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Jaguar::Log'
+C:\code\c++\Jaguar\Jaguar\vendor\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
+C:\code\c++\Jaguar\Jaguar\src\Jaguar\Window\Window.cpp(20,54): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\code\c++\Jaguar\Jaguar\src\Jaguar\Window\Window.cpp(20,40): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+  Texture.cpp
+C:\code\c++\Jaguar\Jaguar\src\Jaguar\Renderer\Renderer.h(11): warning C4091: 'static ': ignored on left of 'Jaguar::RendererAPI::API' when no variable is declared
+  TextureGL.cpp
+C:\code\c++\Jaguar\Jaguar\src\Jaguar\Log\log.h(18,42): warning C4251: 'Jaguar::Log::S_CoreLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Jaguar::Log'
+C:\code\c++\Jaguar\Jaguar\vendor\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
+C:\code\c++\Jaguar\Jaguar\src\Jaguar\Log\log.h(19,42): warning C4251: 'Jaguar::Log::S_ClientLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Jaguar::Log'
+C:\code\c++\Jaguar\Jaguar\vendor\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
+  stb_img.h
+  Generating Code...
+     Creating library ..\bin\-windows-x86_64\Jaguar\Jaguar.lib and object ..\bin\-windows-x86_64\Jaguar\Jaguar.exp
+BufferGL.obj : error LNK2001: unresolved external symbol ___glewBindBuffer
+BufferGL.obj : error LNK2001: unresolved external symbol ___glewBufferData
+BufferGL.obj : error LNK2001: unresolved external symbol ___glewDeleteBuffers
+BufferGL.obj : error LNK2001: unresolved external symbol ___glewGenBuffers
+BufferGL.obj : error LNK2001: unresolved external symbol ___glewEnableVertexAttribArray
+BufferGL.obj : error LNK2001: unresolved external symbol ___glewVertexAttribPointer
+BufferGL.obj : error LNK2001: unresolved external symbol ___glewBindVertexArray
+BufferGL.obj : error LNK2001: unresolved external symbol ___glewDeleteVertexArrays
+BufferGL.obj : error LNK2001: unresolved external symbol ___glewGenVertexArrays
+ShaderGL.obj : error LNK2001: unresolved external symbol ___glewAttachShader
+ShaderGL.obj : error LNK2001: unresolved external symbol ___glewCompileShader
+ShaderGL.obj : error LNK2001: unresolved external symbol ___glewCreateProgram
+ShaderGL.obj : error LNK2001: unresolved external symbol ___glewCreateShader
+ShaderGL.obj : error LNK2001: unresolved external symbol ___glewDeleteProgram
+ShaderGL.obj : error LNK2001: unresolved external symbol ___glewDeleteShader
+ShaderGL.obj : error LNK2001: unresolved external symbol ___glewGetProgramInfoLog
+ShaderGL.obj : error LNK2001: unresolved external symbol ___glewGetProgramiv
+ShaderGL.obj : error LNK2001: unresolved external symbol ___glewGetShaderInfoLog
+ShaderGL.obj : error LNK2001: unresolved external symbol ___glewGetShaderiv
+ShaderGL.obj : error LNK2001: unresolved external symbol ___glewGetUniformLocation
+ShaderGL.obj : error LNK2001: unresolved external symbol ___glewLinkProgram
+ShaderGL.obj : error LNK2001: unresolved external symbol ___glewShaderSource
+ShaderGL.obj : error LNK2001: unresolved external symbol ___glewUniform1i
+ShaderGL.obj : error LNK2001: unresolved external symbol ___glewUniformMatrix4fv
+ShaderGL.obj : error LNK2001: unresolved external symbol ___glewUseProgram
+Application.obj : error LNK2019: unresolved external symbol _glewInit@0 referenced in function "public: __thiscall Jaguar::Application::Application(void)" (??0Application@Jaguar@@QAE@XZ)
+Application.obj : error LNK2019: unresolved external symbol _glfwWindowShouldClose referenced in function "public: void __thiscall Jaguar::Application::Run(void)" (?Run@Application@Jaguar@@QAEXXZ)
+Application.obj : error LNK2019: unresolved external symbol _glfwGetTime referenced in function "void __cdecl CameraMove(void)" (?CameraMove@@YAXXZ)
+Window.obj : error LNK2019: unresolved external symbol _glfwInit referenced in function "public: __thiscall Jaguar::Window::Window(void)" (??0Window@Jaguar@@QAE@XZ)
+Window.obj : error LNK2019: unresolved external symbol _glfwTerminate referenced in function "public: void __thiscall Jaguar::Window::Destroy(void)" (?Destroy@Window@Jaguar@@QAEXXZ)
+Window.obj : error LNK2019: unresolved external symbol _glfwCreateWindow referenced in function "public: void __thiscall Jaguar::Window::Create(struct glm::vec<2,float,0>,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?Create@Window@Jaguar@@QAEXU?$vec@$01M$0A@@glm@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+Window.obj : error LNK2019: unresolved external symbol _glfwPollEvents referenced in function "public: void __thiscall Jaguar::Window::Refresh(void)" (?Refresh@Window@Jaguar@@QAEXXZ)
+Window.obj : error LNK2019: unresolved external symbol _glfwMakeContextCurrent referenced in function "public: void __thiscall Jaguar::Window::Create(struct glm::vec<2,float,0>,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?Create@Window@Jaguar@@QAEXU?$vec@$01M$0A@@glm@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+Window.obj : error LNK2019: unresolved external symbol _glfwSwapBuffers referenced in function "public: void __thiscall Jaguar::Window::Refresh(void)" (?Refresh@Window@Jaguar@@QAEXXZ)
+TextureGL.obj : error LNK2001: unresolved external symbol ___glewActiveTexture
+TextureGL.obj : error LNK2001: unresolved external symbol ___glewGenerateMipmap
+C:\code\c++\Jaguar\Vendor\glew\lib\glew32s.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+C:\code\c++\Jaguar\Vendor\glfw\lib\glfw3.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+C:\code\c++\Jaguar\Debug\Jaguar.dll : fatal error LNK1120: 36 unresolved externals

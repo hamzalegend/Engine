@@ -1,0 +1,6 @@
+﻿  SandBox.cpp
+C:\code\c++\Jaguar\Jaguar\src\Jaguar\Log\log.h(18,42): warning C4251: 'Jaguar::Log::S_CoreLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Jaguar::Log'
+C:\code\c++\Jaguar\Jaguar\vendor\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
+C:\code\c++\Jaguar\Jaguar\src\Jaguar\Log\log.h(19,42): warning C4251: 'Jaguar::Log::S_ClientLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Jaguar::Log'
+C:\code\c++\Jaguar\Jaguar\vendor\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
+  SandBox.vcxproj -> C:\code\c++\Jaguar\Debug\SandBox.exe

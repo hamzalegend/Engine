@@ -5,6 +5,7 @@
 #include "../API/OpenGL/ShaderGL.h"
 #include "../API/OpenGL/BufferGL.h"
 #include "Renderer/Renderer.h"
+#include "ECS/Object.h"
 #include <iostream>
 
 
@@ -77,17 +78,6 @@ namespace Jaguar {
 
 	void Application::Run()
 	{
-		float verticesTriangle[] = {
-		// pos____  |color_________________
-		-0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 1.0f,
-		 0.5f,-0.5f, 0.0f, 1.0f, 0.0f, 1.0f,
-		-0.5f,-0.5f, 1.0f, 0.0f, 0.0f, 1.0f,
-		 0.5f, 0.5f, 1.0f, 1.0f, 1.0f, 1.0f,
-		};
-		unsigned int indices[] = {
-			0,1,2,
-			0,3,1,
-		};
 
 		glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 		glViewport(0, 0, window.width, window.height);
@@ -95,41 +85,20 @@ namespace Jaguar {
 		if (RendererAPI::Get_API() == RendererAPI::API::OpenGL) 
 			JR_CORE_INFO("Using OpenGL as the Defult API");
 
+		Object rectangle;
 
-		Shader* shader = Shader::Create("src/shaders/basic.vshader", "src/shaders/basic.fshader");
-		shader->Bind();	
-
-		VertexBuffer* vb = VertexBuffer::Create(verticesTriangle, sizeof(vertices));
-		vb->Bind();
-
-		IndexBuffer* ib = IndexBuffer::Create(indices, 6);
-		ib->Bind();
-
-		VertexArray* va = VertexArray::Create();
-		va->Bind();
-		va->AddLayout(2); // positions
-		va->AddLayout(4); // colors
-		va->Push(); // pushing to GPU;
-
-
-
+		// rectangle.Transform = glm::scale(rectangle.Transform, Vector3(0.5f, 0.5f, 0.0f));
+		// rectangle.Transform = glm::rotate(rectangle.Transform, glm::radians(45.0f), glm::vec3(0.0, 0.0, 1.0));
+		
 		while (!glfwWindowShouldClose(window.m_window))
-		{			
-			
-			shader->Bind();
-			vb->Bind();
-			va->Bind();
-			ib->Bind();
-
+		{	
 			window.Refresh();
+			// JR_CORE_TRACE("Update!");
+			// Transform = glm::translate(Transform, Vector3(-1.0f, 0.3f, 0.0f));
+			// rectangle.Transform = glm::rotate(rectangle.Transform, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+			rectangle.Draw();
 
-			// glDrawArrays(GL_TRIANGLES, 0, 3);
-			glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-
-			shader->UnBind();
-			vb->UnBind();
-			va->UnBind();
-			ib->UnBind();
+			
 
 		}
 	}

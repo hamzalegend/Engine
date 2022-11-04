@@ -8,6 +8,9 @@
 #include <string>
 #include <iostream>
 
+#include "glm/glm.hpp"
+#include <glm/gtc/type_ptr.hpp>
+
 
 
 namespace Jaguar{
@@ -115,6 +118,20 @@ namespace Jaguar{
         
     }
     
+    void ShaderGL::SetUniform(Mat4 value)
+    {
+        // JR_CORE_ERROR("Created Shader");
+        GLuint location = glGetUniformLocation(m_ID, "Transform");
+        if (location == -1)
+        {
+            std::cout << "[ERROR] Uniform with name \" " << "Transform" << " \" doesnt exist!" << std::endl;
+            assert(0);
+            return;
+        }
+        glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(value));
+        
+    }
+
     void ShaderGL::Bind() const
     {
         glUseProgram(m_ID);
