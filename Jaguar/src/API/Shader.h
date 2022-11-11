@@ -17,10 +17,11 @@ namespace Jaguar
 
 
 		// template <class T>
-		virtual void SetMat4(const char* name, Mat4 Value) = 0;
-		virtual void SetInt(const char* name, int Value) = 0;
-			
-
+		virtual void SetUniformMat4(const char* name, Mat4 Value) = 0;
+		virtual void SetUniform1i(const char* name, int Value) = 0;
+		virtual void SetUniform1f(const char* name, float Value) = 0;
+		virtual void SetUniform2f(const char* name, Vector2 Value) = 0;
+		virtual void SetUniform3f(const char* name, Vector3 Value) = 0;
 		
 	private:
 		

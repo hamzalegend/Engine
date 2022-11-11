@@ -51,7 +51,7 @@ namespace Jaguar
 		if (hasTexture)
 			texture->Bind();
 
-		shader->SetMat4("Transform", Transform);
+		shader->SetUniformMat4("Transform", Transform);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
 
@@ -74,7 +74,7 @@ namespace Jaguar
 		texture->Bind();
 		shader->Bind();
 
-		shader->SetInt("Texture0", index);
+		shader->SetUniform1i("Texture0", index);
 
 		shader->UnBind();
 		texture->UnBind();

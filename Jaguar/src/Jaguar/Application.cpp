@@ -84,7 +84,7 @@ namespace Jaguar {
 			JR_CORE_INFO("Using OpenGL as the Defult API");
 
 		Object rectangle;
-		rectangle.AddTexture("src/Images/container.jpg", 0);
+		rectangle.AddTexture("src/Images/Logo.jpeg", 0);
 		rectangle.Transform = glm::translate(rectangle.Transform, Vector3(0.5f, 0.5f, 0.0f));
 		rectangle.Transform = glm::scale(rectangle.Transform, Vector3(0.5f, 0.5f, 0.0f));
 		rectangle.Transform = glm::rotate(rectangle.Transform, glm::radians(45.0f), glm::vec3(0.0, 0.0, 1.0));
@@ -107,7 +107,7 @@ namespace Jaguar {
 
 /*
 // todo::
-
+		check Engine.Todo
 
 // to remember::
 

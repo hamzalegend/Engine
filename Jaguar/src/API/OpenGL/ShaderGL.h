@@ -14,8 +14,11 @@ namespace Jaguar {
 		virtual void Bind() const override;
 		virtual void UnBind() const override;
 
-		virtual void SetMat4(const char* name, Mat4 Value) override;
-		virtual void SetInt(const char* name, int Value) override;
+		virtual void SetUniformMat4(const char* name, Mat4 Value) override;
+		virtual void SetUniform1i(const char* name, int Value) override;
+		virtual void SetUniform1f(const char* name, float Value) override;
+		virtual void SetUniform2f(const char* name, Vector2 Value) override;
+		virtual void SetUniform3f(const char* name, Vector3 Value) override;
 
 	private:
 		unsigned int m_ID;

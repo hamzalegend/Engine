@@ -121,12 +121,12 @@ namespace Jaguar{
         
     }
     
-    void ShaderGL::SetMat4(const char* name, Mat4 Value)
+    void ShaderGL::SetUniformMat4(const char* name, Mat4 Value)
     {
         GLuint location = glGetUniformLocation(m_ID, name);
         if (location == -1)
         {
-            std::cout << "[ERROR] Uniform with name \" " << name << " \" doesnt exist!" << std::endl;
+            JR_CORE_ERROR("[ERROR] Uniform with name \" ", name, " \" doesnt exist!");
             assert(0);
             return;
         }
@@ -134,16 +134,57 @@ namespace Jaguar{
         
     }
     
-    void ShaderGL::SetInt(const char* name, int Value)
+    void ShaderGL::SetUniform1i(const char* name, int Value)
     {
         GLuint location = glGetUniformLocation(m_ID, name);
         if (location == -1)
         {
-            std::cout << "[ERROR] Uniform with name \" " << name << " \" doesnt exist!" << std::endl;
+            JR_CORE_ERROR("[ERROR] Uniform with name \" {0}\" doesnt exist!", name);
             assert(0);
             return;
         }
         glUniform1i(location, Value);
+
+    }
+    
+    void ShaderGL::SetUniform1f(const char* name, float Value)
+    {
+        GLuint location = glGetUniformLocation(m_ID, name);
+        if (location == -1)
+        {   
+            JR_CORE_ERROR("[ERROR] Uniform with name \" {0}\" doesnt exist!", name);
+            assert(0);
+            return;
+        }
+        glUniform1f(location, Value);
+
+    }
+
+
+    void ShaderGL::SetUniform2f(const char* name, Vector2 Value)
+    {
+        GLuint location = glGetUniformLocation(m_ID, name);
+        if (location == -1)
+        {
+            JR_CORE_ERROR("[ERROR] Uniform with name \" {0}\" doesnt exist!", name);
+            assert(0);
+            return;
+        }
+        glUniform2f(location, Value.x, Value.y);
+
+    }
+
+
+    void ShaderGL::SetUniform3f(const char* name, Vector3 Value)
+    {
+        GLuint location = glGetUniformLocation(m_ID, name);
+        if (location == -1)
+        {
+            JR_CORE_ERROR("[ERROR] Uniform with name \" {0}\" doesnt exist!", name);
+            assert(0);
+            return;
+        }
+        glUniform3f(location, Value.x, Value.y, Value.z);
 
     }
 
