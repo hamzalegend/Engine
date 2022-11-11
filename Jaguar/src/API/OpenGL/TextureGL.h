@@ -11,9 +11,14 @@ namespace Jaguar {
 		TextureGL(std::string path, int Index, bool istransparent);
 		~TextureGL();
 
-		virtual int GetIndex() const override { return m_Index; };		
+		virtual int GetIndex() const override { return m_Index; };	
+
+		virtual void Bind() const override;
+		virtual void UnBind() const override;
+
 	private:
 		unsigned int m_ID;
+		std::string m_path;
 		unsigned int m_Index;
 
 	};

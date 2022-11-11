@@ -81,6 +81,7 @@ namespace Jaguar{
         {
             glGetShaderInfoLog(vertex, 512, NULL, infoLog);
             JR_CORE_ERROR("Error compiling vertex shader \"{0}\"", infoLog);
+            assert(0);
             return;
         };
     
@@ -93,7 +94,8 @@ namespace Jaguar{
         if (!success)
         {
             glGetShaderInfoLog(vertex, 512, NULL, infoLog);
-            JR_CORE_ERROR("Error compiling fragment shader \"{0}\"", infoLog);
+            JR_CORE_ERROR("Error compiling fragment shader '{0}'", infoLog);
+            assert(0);
         };
     
         // shader Program
@@ -106,7 +108,8 @@ namespace Jaguar{
         if (!success)
         {
             glGetProgramInfoLog(m_ID, 512, NULL, infoLog);
-            JR_CORE_ERROR("Error compiling & linking shader program \"{0}\"", infoLog);
+            JR_CORE_ERROR("Error compiling & linking shader program '{0}' ", infoLog);
+            assert(0);
             return;
         }
     
@@ -118,18 +121,30 @@ namespace Jaguar{
         
     }
     
-    void ShaderGL::SetUniform(Mat4 value)
+    void ShaderGL::SetMat4(const char* name, Mat4 Value)
     {
-        // JR_CORE_ERROR("Created Shader");
-        GLuint location = glGetUniformLocation(m_ID, "Transform");
+        GLuint location = glGetUniformLocation(m_ID, name);
         if (location == -1)
         {
-            std::cout << "[ERROR] Uniform with name \" " << "Transform" << " \" doesnt exist!" << std::endl;
+            std::cout << "[ERROR] Uniform with name \" " << name << " \" doesnt exist!" << std::endl;
             assert(0);
             return;
         }
-        glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(value));
+        glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(Value));
         
+    }
+    
+    void ShaderGL::SetInt(const char* name, int Value)
+    {
+        GLuint location = glGetUniformLocation(m_ID, name);
+        if (location == -1)
+        {
+            std::cout << "[ERROR] Uniform with name \" " << name << " \" doesnt exist!" << std::endl;
+            assert(0);
+            return;
+        }
+        glUniform1i(location, Value);
+
     }
 
     void ShaderGL::Bind() const

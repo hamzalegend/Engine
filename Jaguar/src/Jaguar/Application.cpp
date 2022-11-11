@@ -2,8 +2,6 @@
 #include "Application.h"
 #include "Window/Window.h"
 #include "Log/log.h"
-#include "../API/OpenGL/ShaderGL.h"
-#include "../API/OpenGL/BufferGL.h"
 #include "Renderer/Renderer.h"
 #include "ECS/Object.h"
 #include <iostream>
@@ -86,20 +84,38 @@ namespace Jaguar {
 			JR_CORE_INFO("Using OpenGL as the Defult API");
 
 		Object rectangle;
+		rectangle.AddTexture("src/Images/container.jpg", 0);
+		rectangle.Transform = glm::translate(rectangle.Transform, Vector3(0.5f, 0.5f, 0.0f));
+		rectangle.Transform = glm::scale(rectangle.Transform, Vector3(0.5f, 0.5f, 0.0f));
+		rectangle.Transform = glm::rotate(rectangle.Transform, glm::radians(45.0f), glm::vec3(0.0, 0.0, 1.0));
 
-		// rectangle.Transform = glm::scale(rectangle.Transform, Vector3(0.5f, 0.5f, 0.0f));
-		// rectangle.Transform = glm::rotate(rectangle.Transform, glm::radians(45.0f), glm::vec3(0.0, 0.0, 1.0));
-		
+		Object rectangle2;
+		rectangle2.AddTexture("src/Images/face.png", 1);
+		rectangle2.Transform = glm::scale(rectangle2.Transform, Vector3(0.5f, 0.5f, 0.0f));
+
 		while (!glfwWindowShouldClose(window.m_window))
 		{	
-			window.Refresh();
 			// JR_CORE_TRACE("Update!");
-			// Transform = glm::translate(Transform, Vector3(-1.0f, 0.3f, 0.0f));
-			// rectangle.Transform = glm::rotate(rectangle.Transform, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+			window.Refresh();
 			rectangle.Draw();
-
+			rectangle2.Draw();
 			
-
 		}
 	}
 }
+
+
+/*
+// todo::
+
+
+// to remember::
+
+		// rectangle.AddTexture("src/Images/awesomeface.png");
+		// rectangle.AddTexture("src/Images/container.jpg", 0);
+		// rectangle.AddTexture("src/Images/face.png", 1);
+
+		// rectangle.Transform = glm::scale(rectangle.Transform, Vector3(0.5f, 0.5f, 0.0f));
+		// rectangle.Transform = glm::rotate(rectangle.Transform, glm::radians(45.0f), glm::vec3(0.0, 0.0, 1.0));
+*/
+		

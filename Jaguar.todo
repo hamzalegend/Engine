@@ -1,0 +1,12 @@
+1- add to shaderGL.cpp:
+    -setUniform1f
+    -setUniform2f
+    -setUniform3f
+    -setUniform1i
+    -setUniformMat4
+
+2- move stuff(client code) to sandBox
+
+3- try and make a game with current engine
+
+4- maybe add 3d support

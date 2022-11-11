@@ -6,13 +6,17 @@
 
 #include "TextureGL.h"
 
-#define STB_IMAGE_IMPLEMENTATION
-#include "stb_img.h"
+// #define STB_IMAGE_IMPLEMENTATION
+        
+        #include <iostream>
+        #include <string>
+        #include <filesystem>
+#include "stb_Image/stb_img.h"
 
 namespace Jaguar {
 
     TextureGL::TextureGL(std::string path, int Index, bool istransparent)
-        :m_Index(Index)
+        :m_Index(Index), m_path(path)
     {
         // init
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
@@ -26,10 +30,18 @@ namespace Jaguar {
         glBindTexture(GL_TEXTURE_2D, m_ID);
         // load
         int width, height, nrChannels;
-        unsigned char* data = stbi_load(path.c_str(), &width, &height, &nrChannels, 0);
-
-        int imageType = istransparent ? GL_RGBA : GL_RGB;
+        unsigned char* data = stbi_load(m_path.c_str(), &width, &height, &nrChannels, 0);
         
+        int imageType = istransparent ? GL_RGBA : GL_RGB;
+        // #include <unistd.h>
+
+        
+        
+        // using std::filesystem::current_path;
+
+        char tmp[256];
+        getcwd(tmp, 256);
+        // JR_CORE_TRACE(tmp);
 
         if (data)
         {
@@ -44,6 +56,16 @@ namespace Jaguar {
         }
         stbi_image_free(data);
         
+    }
+
+    void TextureGL::Bind() const
+    {
+        glActiveTexture(GL_TEXTURE0 + m_Index);
+        glBindTexture(GL_TEXTURE_2D, m_ID);
+    }
+    void TextureGL::UnBind() const
+    {
+        glBindTexture(GL_TEXTURE_2D, 0);
     }
     TextureGL::~TextureGL()
     {

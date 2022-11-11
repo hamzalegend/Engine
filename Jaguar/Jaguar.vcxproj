@@ -133,7 +133,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>GLEW_STATIC;JR_PLATFORM_WINDOWS;JR_BUILD_DLL;JR_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;$(SolutionDir)Vendor\glfw\include;$(SolutionDir)Vendor\glew\include;$(SolutionDir)Vendor\glm\include;$(SolutionDir)Jaguar\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;$(SolutionDir)Vendor\glfw\include;$(SolutionDir)Vendor\glew\include;$(SolutionDir)Vendor\glm\include;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -155,7 +155,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>GLEW_STATIC;JR_PLATFORM_WINDOWS;JR_BUILD_DLL;JR_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;$(SolutionDir)Vendor\glfw\include;$(SolutionDir)Vendor\glew\include;$(SolutionDir)Vendor\glm\include;$(SolutionDir)Jaguar\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;$(SolutionDir)Vendor\glfw\include;$(SolutionDir)Vendor\glew\include;$(SolutionDir)Vendor\glm\include;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -177,7 +177,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>GLEW_STATIC;JR_PLATFORM_WINDOWS;JR_BUILD_DLL;JR_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;$(SolutionDir)Vendor\glfw\include;$(SolutionDir)Vendor\glew\include;$(SolutionDir)Vendor\glm\include;$(SolutionDir)Jaguar\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;$(SolutionDir)Vendor\glfw\include;$(SolutionDir)Vendor\glew\include;$(SolutionDir)Vendor\glm\include;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -203,7 +203,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>GLEW_STATIC;JR_PLATFORM_WINDOWS;JR_BUILD_DLL;JR_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;$(SolutionDir)Vendor\glfw\include;$(SolutionDir)Vendor\glew\include;$(SolutionDir)Vendor\glm\include;$(SolutionDir)Jaguar\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;$(SolutionDir)Vendor\glfw\include;$(SolutionDir)Vendor\glew\include;$(SolutionDir)Vendor\glm\include;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -229,7 +229,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>GLEW_STATIC;JR_PLATFORM_WINDOWS;JR_BUILD_DLL;JR_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;$(SolutionDir)Vendor\glfw\include;$(SolutionDir)Vendor\glew\include;$(SolutionDir)Vendor\glm\include;$(SolutionDir)Jaguar\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;$(SolutionDir)Vendor\glfw\include;$(SolutionDir)Vendor\glew\include;$(SolutionDir)Vendor\glm\include;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -255,7 +255,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>GLEW_STATIC;JR_PLATFORM_WINDOWS;JR_BUILD_DLL;JR_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;$(SolutionDir)Vendor\glfw\include;$(SolutionDir)Vendor\glew\include;$(SolutionDir)Vendor\glm\include;$(SolutionDir)Jaguar\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;$(SolutionDir)Vendor\glfw\include;$(SolutionDir)Vendor\glew\include;$(SolutionDir)Vendor\glm\include;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -277,10 +277,13 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\API\OpenGL\TextureGL.h" />
     <ClInclude Include="src\API\Shader.h" />
     <ClInclude Include="src\API\Buffer.h" />
     <ClInclude Include="src\API\OpenGL\BufferGL.h" />
+    <ClInclude Include="src\API\Texture.h" />
     <ClInclude Include="src\Jaguar\ECS\Object.h" />
+    <ClInclude Include="src\Jaguar\Math.h" />
     <ClInclude Include="src\Jaguar\Renderer\Renderer.h" />
     <ClInclude Include="src\Jaguar\shader.vs" />
     <ClInclude Include="src\API\OpenGL\ShaderGL.h" />
@@ -290,16 +293,20 @@
     <ClInclude Include="src\Jaguar\EntryPoint.h" />
     <ClInclude Include="src\Jaguar\Log\log.h" />
     <ClInclude Include="src\Jaguar\Window\Window.h" />
+    <ClInclude Include="vendor\stb_Image\stb_img.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\API\OpenGL\TextureGL.cpp" />
     <ClCompile Include="src\API\Shader.cpp" />
     <ClCompile Include="src\API\Buffer.cpp" />
     <ClCompile Include="src\API\OpenGL\BufferGL.cpp" />
     <ClCompile Include="src\API\OpenGL\ShaderGL.cpp" />
+    <ClCompile Include="src\API\Texture.cpp" />
     <ClCompile Include="src\Jaguar\Application.cpp" />
     <ClCompile Include="src\Jaguar\ECS\Object.cpp" />
     <ClCompile Include="src\Jaguar\Log\log.cpp" />
     <ClCompile Include="src\Jaguar\Window\Window.cpp" />
+    <ClCompile Include="vendor\stb_Image\stb_Image.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\Jaguar\shader.fs" />
