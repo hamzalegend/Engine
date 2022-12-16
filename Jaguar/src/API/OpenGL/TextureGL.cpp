@@ -1,12 +1,8 @@
 #include "GL/glew.h"
-
-
 #include "Jaguar/Log/log.h"
-// #include "../Shader.h"
-
 #include "TextureGL.h"
 
-// #define STB_IMAGE_IMPLEMENTATION
+
         
         #include <iostream>
         #include <string>

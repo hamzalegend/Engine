@@ -22,11 +22,9 @@ namespace Jaguar
 		struct VertexLayout
 		{
 		public:
-			unsigned int index;
 			unsigned int count;
 			unsigned int type;
-			unsigned int size;
-
+			bool normalized;
 		};
 	public:
 		VertexArrayGL();
@@ -35,21 +33,12 @@ namespace Jaguar
 		virtual void Bind() const override;
 		virtual void UnBind() const override;
 
-		// virtual VertexArray* Create(VertexBuffer*, IndexBuffer*);
-
-		// template<typename T>
-		// void Push(unsigned int count);
-		// template<>
 		virtual void AddLayout(unsigned int count) override;
 
 		virtual void Push() override;
-
-
 	private:
-
 		unsigned int m_ID;
-		unsigned int m_FullCount = 0;
-		unsigned int m_indexCounter = 0;
+		unsigned int m_stride = 0;
 
 		std::vector<VertexLayout> layouts;
 	};

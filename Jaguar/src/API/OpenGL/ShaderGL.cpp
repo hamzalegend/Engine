@@ -126,7 +126,7 @@ namespace Jaguar{
         GLuint location = glGetUniformLocation(m_ID, name);
         if (location == -1)
         {
-            JR_CORE_ERROR("[ERROR] Uniform with name \" ", name, " \" doesnt exist!");
+            JR_CORE_ERROR("[ERROR] Uniform with name '{0}' doesnt exist!", name);
             assert(0);
             return;
         }
@@ -139,7 +139,7 @@ namespace Jaguar{
         GLuint location = glGetUniformLocation(m_ID, name);
         if (location == -1)
         {
-            JR_CORE_ERROR("[ERROR] Uniform with name \" {0}\" doesnt exist!", name);
+            JR_CORE_ERROR("[ERROR] Uniform with name  '{0}' doesnt exist!", name);
             assert(0);
             return;
         }
@@ -152,7 +152,7 @@ namespace Jaguar{
         GLuint location = glGetUniformLocation(m_ID, name);
         if (location == -1)
         {   
-            JR_CORE_ERROR("[ERROR] Uniform with name \" {0}\" doesnt exist!", name);
+            JR_CORE_ERROR("[ERROR] Uniform with name '{0}' doesnt exist!", name);
             assert(0);
             return;
         }
@@ -166,7 +166,7 @@ namespace Jaguar{
         GLuint location = glGetUniformLocation(m_ID, name);
         if (location == -1)
         {
-            JR_CORE_ERROR("[ERROR] Uniform with name \" {0}\" doesnt exist!", name);
+            JR_CORE_ERROR("[ERROR] Uniform with name '{0}' doesnt exist!", name);
             assert(0);
             return;
         }
@@ -180,7 +180,7 @@ namespace Jaguar{
         GLuint location = glGetUniformLocation(m_ID, name);
         if (location == -1)
         {
-            JR_CORE_ERROR("[ERROR] Uniform with name \" {0}\" doesnt exist!", name);
+            JR_CORE_ERROR("[ERROR] Uniform with name '{0}' doesnt exist!", name);
             assert(0);
             return;
         }

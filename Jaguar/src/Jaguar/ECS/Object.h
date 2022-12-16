@@ -6,31 +6,30 @@
 #include "API/Texture.h"
 
 #include "../Math.h"
+#include <Jaguar/Camera/Camera.h>
 
 namespace Jaguar {
 
 	class Object
 	{
 	public:
-		Mat4 Transform;
-		Vector3 color;
-
 		VertexBuffer* vb;
 		IndexBuffer* ib;
 		VertexArray* va;
 		Shader* shader;
 		Texture* texture;
 
+		glm::mat4 model;
 
 		Object();
 		~Object();
 
-		void AddTexture(std::string path, int index, int number=0);
+		void AddTexture(std::string path, int index, int number=0, bool isTransparent = false);
 
 		void Draw();
 
 	private:
-		bool hasTexture = false;
+		bool m_hasTexture = false;
 
 	};
 }

@@ -48,25 +48,23 @@ namespace Jaguar{
 
 	void VertexArrayGL::AddLayout(unsigned int Count)
 	{
-		Bind();
-		VertexLayout layout;
-
-		layout.index = m_indexCounter;
-		m_indexCounter++;
-
-		layout.count = Count;
-		layout.type = GL_FLOAT;
-		layout.size = sizeof(float) * Count;
-		m_FullCount += Count;
-		layouts.push_back(layout);
+		layouts.push_back({ Count, GL_FLOAT, false });
+		m_stride += Count;
 	}
 
 	void VertexArrayGL::Push()
-	{
+	{	
+		if (sizeof(GL_FLOAT) != sizeof(float)) JR_CORE_ERROR("float != GL_FLOAT: please fix asap")
+
+		Bind();
+		float offset = 0;
 		for (int i = 0; i < layouts.size(); i++)
 		{
-			glVertexAttribPointer(layouts[i].index, layouts[i].count, GL_FLOAT, GL_FALSE, sizeof(float) * m_FullCount, 0);
-			glEnableVertexAttribArray(layouts[i].index);
+			const auto& layout = layouts[i];
+
+			glEnableVertexAttribArray(i);
+			glVertexAttribPointer(i, layout.count, layout.type, GL_FALSE, m_stride * sizeof(layout.type), (void*)((int)offset * sizeof(layout.type)));
+			offset += layout.count;
 		}
 	}
 

@@ -4,14 +4,16 @@ layout(location = 0) in vec4 position;
 layout(location = 1) in vec4 color;
 layout(location = 2) in vec2 TexCoords;
 
-uniform mat4 Transform;
+uniform mat4 projection;
+uniform mat4 model;
+uniform mat4 view;
 
 out vec4 f_color;
-out vec2 f_TexCoords;
 
 void main()
 {
-	gl_Position = Transform * position;
 	f_color = color;
-	f_TexCoords = TexCoords;
+	// gl_Position = vec4(position); // if you only want to change based on model
+	// gl_Position = projection * view * model * vec4(position); // if you want to go 3D
+	gl_Position = model * vec4(position); // if you only want to change based on model
 }

@@ -31,6 +31,7 @@
     <ClInclude Include="vendor\stb_Image\stb_img.h" />
     <ClInclude Include="src\API\Texture.h" />
     <ClInclude Include="src\API\OpenGL\TextureGL.h" />
+    <ClInclude Include="src\Jaguar\Camera\Camera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Jaguar\Application.cpp">
@@ -48,6 +49,7 @@
     <ClCompile Include="vendor\stb_Image\stb_Image.cpp" />
     <ClCompile Include="src\API\Texture.cpp" />
     <ClCompile Include="src\API\OpenGL\TextureGL.cpp" />
+    <ClCompile Include="src\Jaguar\Camera\Camera.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\Jaguar\shader.fs" />

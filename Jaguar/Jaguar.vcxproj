@@ -277,6 +277,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Jaguar\Camera\Camera.h" />
     <ClInclude Include="src\API\OpenGL\TextureGL.h" />
     <ClInclude Include="src\API\Shader.h" />
     <ClInclude Include="src\API\Buffer.h" />
@@ -296,6 +297,7 @@
     <ClInclude Include="vendor\stb_Image\stb_img.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Jaguar\Camera\Camera.cpp" />
     <ClCompile Include="src\API\OpenGL\TextureGL.cpp" />
     <ClCompile Include="src\API\Shader.cpp" />
     <ClCompile Include="src\API\Buffer.cpp" />
