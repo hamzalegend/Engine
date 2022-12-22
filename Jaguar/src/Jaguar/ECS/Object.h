@@ -19,7 +19,7 @@ namespace Jaguar {
 		Shader* shader;
 		Texture* texture;
 
-		glm::mat4 model;
+		Mat4 model;
 
 		Object();
 		~Object();

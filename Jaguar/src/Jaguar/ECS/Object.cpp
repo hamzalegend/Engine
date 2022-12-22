@@ -3,7 +3,7 @@
 #include "Jaguar/Log/log.h"
 
 #include "GLFW/glfw3.h"
-#include <Jaguar/Camera/Camera.h>
+// #include <Jaguar/Camera/Camera.h>
 
 float Vertices[] = {
 	// positions          // colors                // texture coords
@@ -52,7 +52,7 @@ namespace Jaguar
 		if (m_hasTexture)
 			texture->Bind();
 
-		shader->SetUniformMat4("model", model);
+		// shader->SetUniformMat4("model", model);
 
 		glDrawElements(GL_TRIANGLES, sizeof(indices) / sizeof(float), GL_UNSIGNED_INT, 0);
 
