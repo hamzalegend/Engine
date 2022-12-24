@@ -82,6 +82,16 @@ namespace Jaguar {
 	Application::~Application()
 	{
 	}
+
+	void Application::PushLayer(Layer* layer)
+	{
+		m_LayerStack.PushLayer(layer);
+	}
+
+	void Application::PushOverlay(Layer* layer)
+	{
+		m_LayerStack.PushOverlay(layer);
+	}
 	
 	float Vertices[] = {
 		// positions          // colors                // texture coords
@@ -171,6 +181,9 @@ namespace Jaguar {
 			}
 			glDrawElements(GL_TRIANGLES, sizeof(indices) / sizeof(float), GL_UNSIGNED_INT, 0);
 
+
+			for (Layer* layer : m_LayerStack)
+				layer->OnUpdate();
 
 		}
 	}

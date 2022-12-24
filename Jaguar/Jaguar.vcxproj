@@ -277,6 +277,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Jaguar\Layer\LayerStack.h" />
     <ClInclude Include="src\API\OpenGL\TextureGL.h" />
     <ClInclude Include="src\API\Shader.h" />
     <ClInclude Include="src\API\Buffer.h" />
@@ -284,6 +285,7 @@
     <ClInclude Include="src\API\Texture.h" />
     <ClInclude Include="src\Jaguar\Camera\Camera.h" />
     <ClInclude Include="src\Jaguar\ECS\Object.h" />
+    <ClInclude Include="src\Jaguar\Layer\Layer.h" />
     <ClInclude Include="src\Jaguar\Math.h" />
     <ClInclude Include="src\Jaguar\Renderer\Renderer.h" />
     <ClInclude Include="src\Jaguar\shader.vs" />
@@ -297,6 +299,7 @@
     <ClInclude Include="vendor\stb_Image\stb_img.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Jaguar\Layer\LayerStack.cpp" />
     <ClCompile Include="src\API\OpenGL\TextureGL.cpp" />
     <ClCompile Include="src\API\Shader.cpp" />
     <ClCompile Include="src\API\Buffer.cpp" />
@@ -306,6 +309,7 @@
     <ClCompile Include="src\Jaguar\Application.cpp" />
     <ClCompile Include="src\Jaguar\Camera\Camera.cpp" />
     <ClCompile Include="src\Jaguar\ECS\Object.cpp" />
+    <ClCompile Include="src\Jaguar\Layer\Layer.cpp" />
     <ClCompile Include="src\Jaguar\Log\log.cpp" />
     <ClCompile Include="src\Jaguar\Window\Window.cpp" />
     <ClCompile Include="vendor\stb_Image\stb_Image.cpp" />
