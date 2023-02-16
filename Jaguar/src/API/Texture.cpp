@@ -6,9 +6,9 @@ namespace Jaguar
 
 	Texture* Texture::Create(std::string path, int Index, bool isTransparent)
 	{
-		switch (RendererAPI::Get_API())
+		switch (Renderer::Get_API())
 		{
-		case(RendererAPI::API::OpenGL):
+		case(Renderer::API::OpenGL):
 			return new TextureGL(path, Index, isTransparent);
 		default:
 			break;

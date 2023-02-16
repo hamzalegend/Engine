@@ -1,5 +1,3 @@
-#include "GL/glew.h"
-
 #include "Application.h"
 #include "Window/Window.h"
 #include "Log/log.h"
@@ -11,11 +9,7 @@
 #include "API/Shader.h"
 #include "API/Buffer.h"
 
-#include <iostream>
-
-
 namespace Jaguar {
-
 
 	float verticesCube[] = {
 		// positions          // normals           // texture coords
@@ -69,15 +63,12 @@ namespace Jaguar {
 		
 		window.Create(600, 600, "Hello OpenGL");
 
-		if (glewInit() != GLEW_OK)
-		{
-			JR_CORE_ERROR("Could Not Initialize The OpenGL Context")
-			return;
-		}
-		glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+		Renderer::Init(Renderer::API::OpenGL);
+
 		glViewport(0, 0, window.width, window.height);
-		
 	}
+
+	Camera* cam = new Camera(Vector2(window.width, window.height));
 
 	Application::~Application()
 	{
@@ -86,11 +77,28 @@ namespace Jaguar {
 	void Application::PushLayer(Layer* layer)
 	{
 		m_LayerStack.PushLayer(layer);
-	}
+	}	 
 
 	void Application::PushOverlay(Layer* layer)
 	{
 		m_LayerStack.PushOverlay(layer);
+	}
+
+	void Application::OnEvent(Event& event)
+	{
+		for (Layer* layer : m_LayerStack)
+		{
+			if (layer->IsEnabled())
+			{
+				if(!event.m_Handeled)
+					layer->OnEvent(event);
+				else
+				{
+					if (!event.m_BlockWhenHandeled)
+						layer->OnEvent(event);
+				}
+			}
+		}
 	}
 	
 	float Vertices[] = {
@@ -107,30 +115,29 @@ namespace Jaguar {
 
 	void Application::Run()
 	{
-
-		if (RendererAPI::Get_API() == RendererAPI::API::OpenGL)
-			JR_CORE_INFO("Using OpenGL as the Defult API");
-
+		// glfwSetCursorPosCallback(window.m_window, mouse_callback);
+	
 		VertexBuffer* vb = VertexBuffer::Create(Vertices, sizeof(Vertices));
 		vb->Bind();
 		IndexBuffer* ib = IndexBuffer::Create(indices, sizeof(indices) / sizeof(float));
 		ib->Bind();
 		VertexArray* va = VertexArray::Create();
+		va->SetIndexBuffer(ib);
 		va->Bind();
 		va->AddLayout(3);
 		va->AddLayout(4);
 		va->AddLayout(2);
 		va->Push();
+		
 		Shader* shader = Shader::Create("src/shaders/Texture.vshader", "src/shaders/Texture.fshader");
 		shader->Bind();
 		Texture* texture = Texture::Create("src/Images/awesomeface.png", 0, true);
 		texture->Bind();
 		shader->SetUniform1i("Texture0", 0);
 
-		Mat4 model = Mat4(1.0f);
+		Mat4 Transform = Mat4(1.0f);
 
-		Camera cam(Vector2(window.width, window.height));
-		cam.Position.z = -4;
+		cam->Position.z = -4;
 
 		float deltaTime, lastFrame = 0;
 		while (!glfwWindowShouldClose(window.m_window))
@@ -143,48 +150,44 @@ namespace Jaguar {
 
 				if (glfwGetKey(window.m_window, GLFW_KEY_D))
 				{
-					cam.Position.x -= deltaTime * 10;
+					cam->Position.x -= deltaTime * 10;
 				}
 				else if (glfwGetKey(window.m_window, GLFW_KEY_A))
 				{
-					cam.Position.x += deltaTime * 10;
+					cam->Position.x += deltaTime * 10;
 				}
 				else if (glfwGetKey(window.m_window, GLFW_KEY_W))
 				{
-					cam.Position.z += deltaTime * 10;
+					cam->Position.z += deltaTime * 10;
 				}
 				else if (glfwGetKey(window.m_window, GLFW_KEY_S))
 				{
-					cam.Position.z -= deltaTime * 10;
+					cam->Position.z -= deltaTime * 10;
 				}
 				else if (glfwGetKey(window.m_window, GLFW_KEY_E))
 				{
-					cam.Position.y -= deltaTime * 10;
+					cam->Position.y -= deltaTime * 10;
 				}
 				else if (glfwGetKey(window.m_window, GLFW_KEY_Q))
 				{
-					cam.Position.y += deltaTime * 10;
+					cam->Position.y += deltaTime * 10;
 				}
 			} // move
-
-			// bind & setup
+			
+			// Render
 			{  
-				shader->Bind();
-				vb->Bind();
-				ib->Bind();
-				va->Bind();
-				texture->Bind();
-
-				shader->SetUniformMat4("model", model);
-				shader->SetUniformMat4("projection", cam.GetProjectionMatrix());
-				shader->SetUniformMat4("view", cam.GetViewMatrix());
+				Renderer::BeginScene(cam);
+				Renderer::Submit(va, shader, Transform);
+				Renderer::Flush();
+				Renderer::EndScene();	
+				Renderer::EndScene();	
 			}
-			glDrawElements(GL_TRIANGLES, sizeof(indices) / sizeof(float), GL_UNSIGNED_INT, 0);
-
 
 			for (Layer* layer : m_LayerStack)
-				layer->OnUpdate();
-
+			{
+				if (layer->IsEnabled())
+					layer->OnUpdate();
+			}
 		}
 	}
 }

@@ -10,3 +10,4 @@
 // #include "Jaguar/Window/Window.h"
 
 #include "API/OpenGL/ShaderGL.h"
+#include "Jaguar/Scene/Scene.h"

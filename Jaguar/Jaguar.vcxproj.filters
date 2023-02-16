@@ -34,6 +34,14 @@
     <ClInclude Include="src\Jaguar\Camera\Camera.h" />
     <ClInclude Include="src\Jaguar\Layer\Layer.h" />
     <ClInclude Include="src\Jaguar\Layer\LayerStack.h" />
+    <ClInclude Include="src\Jaguar\Event\Event.h" />
+    <ClInclude Include="src\Jaguar\Event\WindowEvents.h" />
+    <ClInclude Include="vendor\Entt\entt.h" />
+    <ClInclude Include="vendor\Entt\license" />
+    <ClInclude Include="src\Jaguar\Scene\Scene.h" />
+    <ClInclude Include="src\Jaguar\Renderer\RendererAPI.h" />
+    <ClInclude Include="src\Jaguar\Renderer\RenderCommand.h" />
+    <ClInclude Include="src\Jaguar\Renderer\RendererAPIOpenGL.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Jaguar\Application.cpp">
@@ -54,6 +62,12 @@
     <ClCompile Include="src\Jaguar\Camera\Camera.cpp" />
     <ClCompile Include="src\Jaguar\Layer\Layer.cpp" />
     <ClCompile Include="src\Jaguar\Layer\LayerStack.cpp" />
+    <ClCompile Include="src\Jaguar\Event\Event.cpp" />
+    <ClCompile Include="src\Jaguar\Event\WindowEvents.cpp" />
+    <ClCompile Include="src\Jaguar\Scene\Scene.cpp" />
+    <ClCompile Include="src\Jaguar\Renderer\Renderer.cpp" />
+    <ClCompile Include="src\Jaguar\Renderer\RenderCommand.cpp" />
+    <ClCompile Include="src\Jaguar\Renderer\RendererAPIOpenGL.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\Jaguar\shader.fs" />

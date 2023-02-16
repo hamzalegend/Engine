@@ -1,6 +1,8 @@
 #pragma once
 
 #include"Jaguar/Core.h"
+#include "Jaguar/Event/Event.h"
+#include "Jaguar/Log/log.h"
 
 namespace Jaguar
 {
@@ -13,7 +15,7 @@ namespace Jaguar
 		virtual void OnAttach();
 		virtual void OnDetach();
 		virtual void OnUpdate();
-		virtual void OnEvent();
+		virtual void OnEvent(Event& event);
 
 		inline void SetEnabled(bool enabled) { m_enabled = enabled; }
 		inline bool IsEnabled() { return m_enabled; }

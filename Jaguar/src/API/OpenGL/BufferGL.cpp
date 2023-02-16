@@ -68,6 +68,16 @@ namespace Jaguar{
 		}
 	}
 
+	void VertexArrayGL::SetIndexBuffer(IndexBuffer* ib)
+	{
+		m_indexBuffer = ib;
+	}
+
+	IndexBuffer* VertexArrayGL::GetIndexBuffer()
+	{
+		return m_indexBuffer;
+	}
+
 	//========================[IndexBuffer]=====================
 	IndexBufferGL::IndexBufferGL(const unsigned int* data, unsigned int count)
 		:m_Count(count)

@@ -16,6 +16,24 @@ namespace Jaguar {
 
 	};
 
+	class IndexBuffer
+	{
+	public:
+
+
+
+		virtual ~IndexBuffer() = default;
+
+		virtual void Bind() const = 0;
+		virtual void UnBind() const = 0;
+
+		static IndexBuffer* Create(const unsigned int* data, unsigned int count);
+
+		virtual inline unsigned int getCount() const = 0;
+	private:
+
+	};
+
 	class VertexArray
 	{
 	public:
@@ -30,30 +48,14 @@ namespace Jaguar {
 		virtual void AddLayout(unsigned int count) = 0;
 		virtual void Push() = 0;
 
+		virtual void SetIndexBuffer(IndexBuffer* ib) = 0;
+		virtual IndexBuffer* GetIndexBuffer() = 0;
 		
 
 	private:
 
 	};
 
-
-	class IndexBuffer
-	{
-	public:
-
-
-
-		virtual ~IndexBuffer() = default;
-
-		virtual void Bind() const = 0;
-		virtual void UnBind() const = 0;
-
-		static IndexBuffer* Create(const unsigned int* data, unsigned int count);
-
-		// virtual inline unsigned int getCount() const { return m_Count; }
-	private:
-
-	};
 
 
 }

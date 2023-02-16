@@ -21,7 +21,7 @@ namespace Jaguar
 	{
 	}
 	
-	void Layer::OnEvent()
+	void Layer::OnEvent(Event& event)
 	{
 	}
 }

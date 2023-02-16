@@ -6,9 +6,9 @@ namespace Jaguar {
 
 	VertexBuffer* VertexBuffer::Create(const void* data, unsigned int size)
 	{
-		switch (RendererAPI::Get_API())
+		switch (Renderer::Get_API())
 		{
-		case(RendererAPI::API::OpenGL):
+		case(Renderer::API::OpenGL):
 			return new VertexBufferGL(data, size);
 		default:
 			break;
@@ -18,9 +18,9 @@ namespace Jaguar {
 
 	VertexArray* VertexArray::Create()
 	{
-		switch (RendererAPI::Get_API())
+		switch (Renderer::Get_API())
 		{
-		case(RendererAPI::API::OpenGL):
+		case(Renderer::API::OpenGL):
 			return new VertexArrayGL();
 		default:
 			break;
@@ -30,9 +30,9 @@ namespace Jaguar {
 
 	IndexBuffer* IndexBuffer::Create(const unsigned int* data, unsigned int count)
 	{
-		switch (RendererAPI::Get_API())
+		switch (Renderer::Get_API())
 		{
-		case(RendererAPI::API::OpenGL):
+		case(Renderer::API::OpenGL):
 			return new IndexBufferGL(data, count);
 		default:
 			break;

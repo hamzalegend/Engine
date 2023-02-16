@@ -8,9 +8,9 @@ namespace Jaguar
 
 	Shader* Shader::Create(std::string VertexPath, std::string FragmentPath)
 	{
-		switch (RendererAPI::Get_API())
+		switch (Renderer::Get_API())
 		{
-		case(RendererAPI::API::OpenGL):
+		case(Renderer::API::OpenGL):
 			return new ShaderGL(VertexPath.c_str(), FragmentPath.c_str());
 		default:
 			break;

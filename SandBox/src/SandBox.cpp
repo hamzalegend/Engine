@@ -1,19 +1,26 @@
 #include <Engine.h>
+#include <Jaguar/Event/Event.h>
 
-class ExapleLayer : public Jaguar::Layer
+
+class EditorLayer : public Jaguar::Layer
 {
 public:
-	ExapleLayer()
+	EditorLayer()
 	{
-
+		Jaguar::Scene* mainScene = new Jaguar::Scene;
 	}
 
-	void OnUpdate()
+	void OnUpdate() override
 	{
-		JR_CORE_INFO("Update()");
+		// JR_CORE_INFO("Update()");
 	}
-
-	~ExapleLayer()
+	virtual void OnEvent(Jaguar::Event& event) 
+	{
+		// const char* name = event.GetName().c_str();
+		JR_CORE_ERROR("Event :  !!");
+		// JR_CORE_TRACE("{0}", (int)event.catigory);
+	}
+	~EditorLayer()
 	{
 
 	}
@@ -27,7 +34,9 @@ class Sandbox : public Jaguar::Application
 public:
 	Sandbox()
 	{
-		PushLayer(new ExapleLayer());
+		EditorLayer* editorLayer = new EditorLayer();
+		editorLayer->SetEnabled(false);
+		PushLayer(editorLayer);
 	};
 	~Sandbox()
 	{

@@ -36,11 +36,16 @@ namespace Jaguar
 		virtual void AddLayout(unsigned int count) override;
 
 		virtual void Push() override;
+
+		virtual void SetIndexBuffer(IndexBuffer* ib) override;
+		virtual IndexBuffer* GetIndexBuffer() override;
 	private:
 		unsigned int m_ID;
 		unsigned int m_stride = 0;
 
 		std::vector<VertexLayout> layouts;
+
+		IndexBuffer* m_indexBuffer;
 	};
 
 
@@ -53,7 +58,7 @@ namespace Jaguar
 		virtual void Bind() const override;
 		virtual void UnBind() const override;
 
-		inline unsigned int getCount() const { return m_Count; }
+		virtual inline unsigned int getCount() const override { return m_Count; }
 
 	private:
 		
