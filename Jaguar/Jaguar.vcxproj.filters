@@ -42,6 +42,9 @@
     <ClInclude Include="src\Jaguar\Renderer\RendererAPI.h" />
     <ClInclude Include="src\Jaguar\Renderer\RenderCommand.h" />
     <ClInclude Include="src\Jaguar\Renderer\RendererAPIOpenGL.h" />
+    <ClInclude Include="src\Jaguar\Scene\Components.h" />
+    <ClInclude Include="src\Jaguar\Scene\Entity.h" />
+    <ClInclude Include="src\Jaguar\Renderer\Mesh.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Jaguar\Application.cpp">

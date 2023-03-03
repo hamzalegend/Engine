@@ -1,13 +1,16 @@
 #include <Engine.h>
 #include <Jaguar/Event/Event.h>
+#include <Jaguar/Scene/Scene.h>
 
 
 class EditorLayer : public Jaguar::Layer
 {
+private:
+	Jaguar::Scene* m_ActiveScene;
 public:
 	EditorLayer()
 	{
-		Jaguar::Scene* mainScene = new Jaguar::Scene;
+		
 	}
 
 	void OnUpdate() override
@@ -16,9 +19,6 @@ public:
 	}
 	virtual void OnEvent(Jaguar::Event& event) 
 	{
-		// const char* name = event.GetName().c_str();
-		JR_CORE_ERROR("Event :  !!");
-		// JR_CORE_TRACE("{0}", (int)event.catigory);
 	}
 	~EditorLayer()
 	{

@@ -51,5 +51,6 @@ namespace Jaguar {
 	#define JR_WARN(...) 	::Jaguar::Log::GetClientLogger()->warn(__VA_ARGS__);
 	#define JR_ERROR(...) 	::Jaguar::Log::GetClientLogger()->error(__VA_ARGS__);
 	#define JR_CRITICAL(...)	::Jaguar::Log::GetClientLogger()->critical(__VA_ARGS__);
-
+	
+	#define JR_CORE_ASSERT(x, y) {if(x)JR_CORE_ERROR(y);}
 #endif

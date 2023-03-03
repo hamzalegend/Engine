@@ -18,6 +18,14 @@ namespace Jaguar
     Camera::~Camera()
     {
     }
+
+    void Camera::Update(float deltaTime)
+    {
+        // Direction.x = cos(glm::radians(Rotation.y)) * cos(glm::radians(Rotation.x));
+        // Direction.y = sin(glm::radians(Rotation.x));
+        // Direction.z = sin(glm::radians(Rotation.y)) * cos(glm::radians(Rotation.x));
+        // Forward = glm::normalize(Direction);
+    }
     
     Mat4 Camera::GetViewMatrix()
     {
@@ -31,8 +39,8 @@ namespace Jaguar
     
     
         // view = Mat4(1.0f);
-        // view = glm::translate(Mat4(1.0), Position) * glm::rotate(view, Rotation.x, Vector3(1, 0, 0)) * glm::rotate(view, Rotation.y, Vector3(0, 1, 0)) * glm::rotate(view, Rotation.z, Vector3(0, 0, 1));
-        // 
+        // view = glm::translate(Mat4(1.0), Position) * glm::rotate(view, Rotation.y, Vector3(-1, 0, 0)) * glm::rotate(view, Rotation.x, Vector3(0, 1, 0));
+        // // 
         // view = glm::inverse(view);
     	// return view;
     
@@ -42,7 +50,6 @@ namespace Jaguar
     {
         // projection = glm::perspective(glm::radians(45.0f), (float)WindowDimentions.x / (float)WindowDimentions.y, NearPlane, FarPlane);
         projection = glm::perspective(glm::radians(FOV), (float)m_window->Dimentions.x/ (float)m_window->Dimentions.y, NearPlane, FarPlane); // placedholder // TODO ::
-        JR_CORE_INFO(m_window->Dimentions.x);
         return projection;
     }
 }

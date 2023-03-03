@@ -19,6 +19,7 @@ namespace Jaguar {
 		void Run();
 
 	private:
+		
 		LayerStack m_LayerStack;
 	};
 	// to be defined in client

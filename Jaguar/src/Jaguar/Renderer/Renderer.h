@@ -1,25 +1,16 @@
 #pragma once
-#include <Jaguar/Math.h>
-#include <API/Shader.h>
+
+#include "Mesh.h""
 
 #include "API/Buffer.h"
-#include <Jaguar/Camera/Camera.h>
+#include "API/Shader.h"
+
+#include "Jaguar/Camera/Camera.h"
+
+#include <Jaguar/Math.h>
 
 namespace Jaguar
 {
-	// class RendererAPI
-	// {
-	// public:
-	// 
-	// 	// void SetAPI(API api) { s_API=api; };
-	// 	
-	// private:
-	// };
-	// 
-	// // RendererAPI::API RendererAPI::s_API = RendererAPI::API::OpenGL;
-
-
-
 	class Renderer
 	{
 	public:
@@ -35,14 +26,14 @@ namespace Jaguar
 	
 		static void Init(API api);
 		static void BeginScene(Camera* camera);
-		static void Submit(VertexArray* va, Shader* shaer, Mat4 transform);
+		static void Submit(Mesh& mesh,Mat4& transform);
+		static void Submit(VertexArray* va, Shader* shaer, Mat4& transform);
 		static void EndScene();
 		static void Flush();
+
 		static API s_API;
 	private:
 	};
-
-
 }
 	
 	

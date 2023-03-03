@@ -6,20 +6,21 @@
 
 namespace Jaguar
 {
+	class Entity;
 	class JAGUAR_API Scene
 	{
 	public:
 		Scene();
 		~Scene();
 
+		Entity CreateEntity(std::string name = "New Entity");
+
 		void OnUpdate(float deltaTime);
 
-		Camera* SceneCamera;
-
 	private:
+		entt::registry m_Registry;
 
-		// entt::registry m_Registry;
-
+		friend Entity;
 	};
 
 }

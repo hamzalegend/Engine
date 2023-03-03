@@ -49,8 +49,8 @@ namespace Jaguar
 		glfwTerminate();
 	}
 		
-		Window::~Window()
+	Window::~Window()
 	{
-	Destroy();
+		Destroy();
 	}
 }

@@ -10,6 +10,8 @@ namespace Jaguar
     public:
     	Camera(Window* window, float Fov=45);
     	~Camera();
+
+        void Update(float deltaTime);
     
     public:
         Vector3 Position = Vector3(0.0f, 0.0f, 3.0f);;
@@ -23,7 +25,9 @@ namespace Jaguar
         Mat4 view;
         Mat4 projection;
     
-    
+        // Vector3 Direction;
+        // Vector3 Forward;
+        
     
         // glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
         // glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
@@ -46,7 +50,7 @@ namespace Jaguar
         float NearPlane = 0.1f;
         float FarPlane = 100.0f;
     
-        float lastX = 400, lastY = 300;
-        bool firstMouse = true;
+        // float lastX = 400, lastY = 300;
+        // bool firstMouse = true;
     };
 }

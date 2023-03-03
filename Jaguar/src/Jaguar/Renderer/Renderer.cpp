@@ -23,12 +23,11 @@ namespace Jaguar
 	void Renderer::BeginScene(Camera* camera)
 	{
 		m_SceneCamera = camera;
+		RenderCommand::Clear();
 	}
 
-	void Renderer::Submit(VertexArray* va, Shader* shader, Mat4 transform)
+	void Renderer::Submit(VertexArray* va, Shader* shader, Mat4& transform)
 	{
-		RenderCommand::Clear();
-
 		shader->Bind();
 		shader->SetUniformMat4("model", transform);
 		shader->SetUniformMat4("projection", m_SceneCamera->GetProjectionMatrix());
@@ -37,6 +36,33 @@ namespace Jaguar
 		va->Bind();
 		va->GetIndexBuffer()->Bind();
 		RenderCommand::DrawIndexed(va->GetIndexBuffer()->getCount());
+	}
+	
+	void Renderer::Submit(Mesh& mesh, Mat4& transform)
+	{
+		VertexBuffer* vb = VertexBuffer::Create(&mesh.Vertices[0], mesh.Vertices.size() * sizeof(float));
+		vb->Bind();
+		IndexBuffer* ib = IndexBuffer::Create(mesh.indices.data(), sizeof(mesh.indices) / sizeof(float));
+		ib->Bind();
+		VertexArray* va = VertexArray::Create();
+		va->SetIndexBuffer(ib);
+		va->Bind();
+		va->AddLayout(3);
+		va->AddLayout(4);
+		va->AddLayout(2);
+		va->Push();
+
+		Shader* shader = Shader::Create("src/shaders/basic.vshader", "src/shaders/basic.fshader");
+		shader->Bind();
+
+		shader->SetUniformMat4("model", transform);
+		shader->SetUniformMat4("projection", m_SceneCamera->GetProjectionMatrix());
+		shader->SetUniformMat4("view", m_SceneCamera->GetViewMatrix());
+
+		va->GetIndexBuffer()->Bind();
+		RenderCommand::DrawIndexed(va->GetIndexBuffer()->getCount());
+
+		delete vb, ib, va, shader;
 	}
 
 	void Renderer::Flush()

@@ -9,6 +9,12 @@
 #include "API/Shader.h"
 #include "API/Buffer.h"
 
+
+#include <Jaguar/Scene/Scene.h>
+#include <Jaguar/Scene/Components.h>
+#include <Jaguar/Scene/Entity.h>
+#include <iostream>
+
 namespace Jaguar {
 
 	/*
@@ -58,14 +64,14 @@ namespace Jaguar {
 	};
 	*/
 
-	Window window;
-	Camera* cam = new Camera(&window);
-
+	Window m_Window;
+	Camera* cam = new Camera(&m_Window);
+	Scene* scene = new Scene;
 
 	Application::Application()
 	{
 		
-		window.Create(Vector2(600, 600), "Hello OpenGL");
+		m_Window.Create(Vector2(600, 600), "Hello OpenGL");
 
 		Renderer::Init(Renderer::API::OpenGL);
 	}
@@ -98,96 +104,131 @@ namespace Jaguar {
 		}
 	}
 
-
 	void framebuffer_size_callback(GLFWwindow* Window, int width, int height)
 	{
-		window.Resize(Vector2(width, height));
+		m_Window.Resize(Vector2(width, height));
 	}
+
+	/*
+	float lastX, lastY;
+	bool firstMouse = true;
+	void mouse_callback(GLFWwindow * window, double xpos, double ypos)
+		{
+			if (firstMouse)
+			{
+				lastX = xpos;
+				lastY = ypos;
+				firstMouse = false;
+			}
+
+			float xoffset = xpos - lastX;
+			float yoffset = lastY - ypos;
+			lastX = xpos;
+			lastY = ypos;
+
+			float sensitivity = 0.005f;
+			xoffset *= sensitivity;
+			yoffset *= sensitivity;
+
+			cam->Rotation.x -= xoffset;
+			cam->Rotation.y -= yoffset;
+
+			if (cam->Rotation.x > 89.0f)
+				cam->Rotation.x = 89.0f;
+			if (cam->Rotation.x < -89.0f)
+				cam->Rotation.x = -89.0f;
+	}
+	*/
 	
-	float Vertices[] = {
+	std::vector<float> Vertices = {
 		// positions          // colors                // texture coords
 		 0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // top right
 		 0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f, 0.0f,   1.0f, 0.0f,   // bottom right
 		-0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f, 0.0f,   0.0f, 0.0f,   // bottom left
 		-0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f, 0.0f,   0.0f, 1.0f    // top left 
 	};
-	unsigned int indices[] = {
+	
+	std::vector<unsigned int> indices = {
 		0, 1, 3,
 		1, 2, 3,
 	};	
 
 	void Application::Run()
 	{
-		glfwSetFramebufferSizeCallback(window.m_window, framebuffer_size_callback);
+		glfwSetFramebufferSizeCallback(m_Window.m_window, framebuffer_size_callback);
 		// glfwSetCursorPosCallback(window.m_window, mouse_callback);
-
-	
-		VertexBuffer* vb = VertexBuffer::Create(Vertices, sizeof(Vertices));
-		vb->Bind();
-		IndexBuffer* ib = IndexBuffer::Create(indices, sizeof(indices) / sizeof(float));
-		ib->Bind();
-		VertexArray* va = VertexArray::Create();
-		va->SetIndexBuffer(ib);
-		va->Bind();
-		va->AddLayout(3);
-		va->AddLayout(4);
-		va->AddLayout(2);
-		va->Push();
-		
-		Shader* shader = Shader::Create("src/shaders/Texture.vshader", "src/shaders/Texture.fshader");
-		shader->Bind();
-		Texture* texture = Texture::Create("src/Images/awesomeface.png", 0, true);
-		texture->Bind();
-		shader->SetUniform1i("Texture0", 0);
-
-		Mat4 Transform = Mat4(1.0f);
 
 		cam->Position.z = -4;
 
-		float deltaTime, lastFrame = 0;
-		while (!glfwWindowShouldClose(window.m_window))
-		{
-			window.Refresh();
+		Entity e = scene->CreateEntity("jack");
+		e.GetComponent<TransformComponent>().Transform = Mat4(1.0f);
+		e.AddComponent<MeshRendererComponent>();
+		e.GetComponent<MeshRendererComponent>().mesh.Vertices = Vertices;
+		e.GetComponent<MeshRendererComponent>().mesh.indices = indices;
+		e.GetComponent<MeshRendererComponent>().mesh.color = Vector4(25, 52, 63, 0);
 
+
+		// / Entity camera = scene->CreateEntity("camera");
+		// / // omar.GetComponent<TransformComponent>().Transform = glm::translate(Mat4(1.0f), Vector3(1.5,-0.5,0));
+		// / camera.AddComponent<CameraComponent>();
+
+		float deltaTime, lastFrame = 0;
+		while (!glfwWindowShouldClose(m_Window.m_window))
+		{
+			m_Window.Refresh();
+			
 			// Move Player
-			{ 
+			{
 				float currentFrame = glfwGetTime();
 				deltaTime = currentFrame - lastFrame;
 				lastFrame = currentFrame;
 
-				if (glfwGetKey(window.m_window, GLFW_KEY_D))
+			
+				if (glfwGetKey(m_Window.m_window, GLFW_KEY_D))
 				{
 					cam->Position.x -= deltaTime * 10;
 				}
-				else if (glfwGetKey(window.m_window, GLFW_KEY_A))
+				else if (glfwGetKey(m_Window.m_window, GLFW_KEY_A))
 				{
 					cam->Position.x += deltaTime * 10;
 				}
-				else if (glfwGetKey(window.m_window, GLFW_KEY_W))
+				else if (glfwGetKey(m_Window.m_window, GLFW_KEY_W))
 				{
 					cam->Position.z += deltaTime * 10;
 				}
-				else if (glfwGetKey(window.m_window, GLFW_KEY_S))
+				else if (glfwGetKey(m_Window.m_window, GLFW_KEY_S))
 				{
 					cam->Position.z -= deltaTime * 10;
 				}
-				else if (glfwGetKey(window.m_window, GLFW_KEY_E))
+				else if (glfwGetKey(m_Window.m_window, GLFW_KEY_E))
 				{
 					cam->Position.y -= deltaTime * 10;
 				}
-				else if (glfwGetKey(window.m_window, GLFW_KEY_Q))
+				else if (glfwGetKey(m_Window.m_window, GLFW_KEY_Q))
 				{
 					cam->Position.y += deltaTime * 10;
 				}
+			}
+
+			Renderer::BeginScene(cam);
+			scene->OnUpdate(deltaTime);
+
+			// old-new move
+			{
+				// float cameraSpeed = 5;
+				// Vector3 WorldUp = Vector3(0, 1, 0);
+				// Vector3 cameraUp = WorldUp;
+				// cam->Update(deltaTime);
+				// if (glfwGetKey(window.m_window, GLFW_KEY_W) == GLFW_PRESS)
+				// 	cam->Position -= cameraSpeed * cam->Forward * deltaTime;
+				// if (glfwGetKey(window.m_window, GLFW_KEY_S) == GLFW_PRESS)
+				// 	cam->Position += cameraSpeed * cam->Forward * deltaTime;
+				// if (glfwGetKey(window.m_window, GLFW_KEY_A) == GLFW_PRESS)
+				// 	cam->Position -= glm::normalize(glm::cross(cam->Forward, cameraUp)) * cameraSpeed * deltaTime;
+				// if (glfwGetKey(window.m_window, GLFW_KEY_D) == GLFW_PRESS)
+				// 	cam->Position += glm::normalize(glm::cross(cam->Forward, cameraUp)) * cameraSpeed * deltaTime;
 			} // move
 			
-			// Render
-			{  
-				Renderer::BeginScene(cam);
-				Renderer::Submit(va, shader, Transform);
-				Renderer::Flush();
-				Renderer::EndScene();		
-			}
 
 			// Update Layers
 			for (Layer* layer : m_LayerStack)
