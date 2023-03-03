@@ -11,6 +11,7 @@
 
 namespace Jaguar {
 
+	/*
 	float verticesCube[] = {
 		// positions          // normals           // texture coords
 		-0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  0.0f, 0.0f,
@@ -55,21 +56,19 @@ namespace Jaguar {
 		-0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,  0.0f, 0.0f,
 		-0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,  0.0f, 1.0f
 	};
+	*/
 
 	Window window;
+	Camera* cam = new Camera(&window);
+
 
 	Application::Application()
 	{
 		
-		window.Create(600, 600, "Hello OpenGL");
+		window.Create(Vector2(600, 600), "Hello OpenGL");
 
 		Renderer::Init(Renderer::API::OpenGL);
-
-		glViewport(0, 0, window.width, window.height);
 	}
-
-	Camera* cam = new Camera(Vector2(window.width, window.height));
-
 	Application::~Application()
 	{
 	}
@@ -78,12 +77,10 @@ namespace Jaguar {
 	{
 		m_LayerStack.PushLayer(layer);
 	}	 
-
 	void Application::PushOverlay(Layer* layer)
 	{
 		m_LayerStack.PushOverlay(layer);
 	}
-
 	void Application::OnEvent(Event& event)
 	{
 		for (Layer* layer : m_LayerStack)
@@ -100,6 +97,12 @@ namespace Jaguar {
 			}
 		}
 	}
+
+
+	void framebuffer_size_callback(GLFWwindow* Window, int width, int height)
+	{
+		window.Resize(Vector2(width, height));
+	}
 	
 	float Vertices[] = {
 		// positions          // colors                // texture coords
@@ -115,7 +118,9 @@ namespace Jaguar {
 
 	void Application::Run()
 	{
+		glfwSetFramebufferSizeCallback(window.m_window, framebuffer_size_callback);
 		// glfwSetCursorPosCallback(window.m_window, mouse_callback);
+
 	
 		VertexBuffer* vb = VertexBuffer::Create(Vertices, sizeof(Vertices));
 		vb->Bind();
@@ -143,7 +148,9 @@ namespace Jaguar {
 		while (!glfwWindowShouldClose(window.m_window))
 		{
 			window.Refresh();
-			{ // Move
+
+			// Move Player
+			{ 
 				float currentFrame = glfwGetTime();
 				deltaTime = currentFrame - lastFrame;
 				lastFrame = currentFrame;
@@ -179,10 +186,10 @@ namespace Jaguar {
 				Renderer::BeginScene(cam);
 				Renderer::Submit(va, shader, Transform);
 				Renderer::Flush();
-				Renderer::EndScene();	
-				Renderer::EndScene();	
+				Renderer::EndScene();		
 			}
 
+			// Update Layers
 			for (Layer* layer : m_LayerStack)
 			{
 				if (layer->IsEnabled())

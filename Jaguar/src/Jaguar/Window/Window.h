@@ -1,6 +1,8 @@
 #pragma once
+#include "gl/glew.h"
 #include "GLFW/glfw3.h"
 #include <string>
+#include <Jaguar/Math.h>
 
 namespace Jaguar 
 {
@@ -8,15 +10,15 @@ namespace Jaguar
 	{
 	public:
 		Window();
-		void Create(int x, int y, std::string name);
+		void Create(Vector2 WinDimentions, std::string name);
 		void Refresh();
-		void Resize(int x, int y); // TODO: [Very Important to implement] : glfwSetFramebufferSizeCallback(window.window, framebuffer_size_callback);
+		void Resize(Vector2 WinDimentions); // TODO: [Very Important to implement] : glfwSetFramebufferSizeCallback(window.window, framebuffer_size_callback);
 		void Destroy();
 		~Window();
 	
 		GLFWwindow* m_window;
-		int width;
-		int height;
+		Vector2 Dimentions;
+		std::string m_name;
 	private:
 	};
 }
