@@ -22,17 +22,17 @@ namespace Jaguar
 		Vector3 Scale = { 0, 0, 0 };
 		operator glm::mat4& () { return Transform; }
 
-		// void Update()
-		// {
-		// 	Transform = Mat4(1.0);
-		// 	Transform = glm::translate(Transform, Position);
-		// 
-		// 	Transform = glm::rotate(Transform, Rotation.x, Vector3(1, 0, 0));
-		// 	Transform = glm::rotate(Transform, Rotation.y, Vector3(0, 1, 0));
-		// 	Transform = glm::rotate(Transform, Rotation.z, Vector3(0, 0, 1));
-		// 
-		// 	Transform = glm::scale(Transform, Scale);
-		// }
+		void Update()
+		{
+			Transform = Mat4(1.0);
+			Transform = glm::translate(Transform, Position);
+		
+			Transform = glm::rotate(Transform, Rotation.x, Vector3(1, 0, 0));
+			Transform = glm::rotate(Transform, Rotation.y, Vector3(0, 1, 0));
+			Transform = glm::rotate(Transform, Rotation.z, Vector3(0, 0, 1));
+		
+			Transform = glm::scale(Transform, Scale);
+		}
 	};
 
 	struct TagComponent
@@ -47,9 +47,9 @@ namespace Jaguar
 		// Vector4 color;
 	};
 
-	// struct CameraComponent
-	// {
-	// 	bool Primary = true;
-	// 	Camera* cam;
-	// };
+	struct CameraComponent
+	{
+		bool Primary = true;
+		Camera* cam;
+	};
 }

@@ -41,36 +41,34 @@ namespace Jaguar
 		// 	// std::cout <<  tag.name << " , " << std::endl;
 		// }
 
-		// auto group = m_Registry.group<TransformComponent>(entt::get<MeshRendererComponent>);
-		// for (auto entity : group)
-		// {
-		// 	auto& [transform, MRC] = group.get<TransformComponent, MeshRendererComponent>(entity);
-		// 	std::cout << MRC.mesh.color.x << " , " << MRC.mesh.color.y << " , " << MRC.mesh.color.z << std::endl;
-		// }
-
-		// Renderer::BeginScene(cam); // TODO :: yes;
+		// Primary Camera:
+		CameraComponent* PrimaryCam;
 		{
-			auto group = m_Registry.group<TransformComponent>(entt::get<MeshRendererComponent>);
-			for (auto entity : group)
+			auto view = m_Registry.view<CameraComponent>();
+			for (auto entity : view)
 			{
-				//auto& [transform, Mesh] = group.get<TransformComponent, MeshRendererComponent>(entity);
-				TransformComponent transform = group.get<TransformComponent>(entity);
-				MeshRendererComponent mesh= group.get<MeshRendererComponent>(entity);
-
-				Renderer::Submit(mesh.mesh, transform.Transform); // TODO :: fix
-
-				// std::cout << transform.Transform[0][0] << " , " << transform.Transform[3][1] << " , " << transform.Transform[3][2] << std::endl;
-				// Renderer2D::DrawSprite(transform.GetTransform(), sprite, (int)entity);
+				CameraComponent& cam = view.get<CameraComponent>(entity);
+				if (cam.Primary)
+					PrimaryCam = &cam;
+				// std::cout << MRC.mesh.color.x << " , " << MRC.mesh.color.y << " , " << MRC.mesh.color.z << std::endl;
 			}
 		}
 
-		// Render
+		// Render:
 		{
-			// Renderer::BeginScene(cam);
-			// Renderer::Submit(va, shader, Transform);
-			// Renderer::Flush();
-			// Renderer::EndScene();		
+			Renderer::BeginScene(PrimaryCam->cam);
+			auto group = m_Registry.group<TransformComponent>(entt::get<MeshRendererComponent>);
+			for (auto entity : group)
+			{
+				TransformComponent& transform = group.get<TransformComponent>(entity);
+				MeshRendererComponent& mesh= group.get<MeshRendererComponent>(entity);
+
+				Renderer::Submit(mesh.mesh, transform.Transform);
+			}
+			Renderer::Flush();
+			Renderer::EndScene();	
 		}
+
 	}
 
 }

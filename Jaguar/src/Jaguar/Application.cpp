@@ -5,11 +5,6 @@
 #include "Renderer/Renderer.h"
 #include "Camera/Camera.h"
 
-#include "API/Texture.h"
-#include "API/Shader.h"
-#include "API/Buffer.h"
-
-
 #include <Jaguar/Scene/Scene.h>
 #include <Jaguar/Scene/Components.h>
 #include <Jaguar/Scene/Entity.h>
@@ -65,7 +60,7 @@ namespace Jaguar {
 	*/
 
 	Window m_Window;
-	Camera* cam = new Camera(&m_Window);
+	// Camera* cam = new Camera(&m_Window);
 	Scene* scene = new Scene;
 
 	Application::Application()
@@ -158,9 +153,7 @@ namespace Jaguar {
 		glfwSetFramebufferSizeCallback(m_Window.m_window, framebuffer_size_callback);
 		// glfwSetCursorPosCallback(window.m_window, mouse_callback);
 
-		cam->Position.z = -4;
-
-		Entity e = scene->CreateEntity("jack");
+		Entity e = scene->CreateEntity("Square");
 		e.GetComponent<TransformComponent>().Transform = Mat4(1.0f);
 		e.AddComponent<MeshRendererComponent>();
 		e.GetComponent<MeshRendererComponent>().mesh.Vertices = Vertices;
@@ -168,9 +161,12 @@ namespace Jaguar {
 		e.GetComponent<MeshRendererComponent>().mesh.color = Vector4(25, 52, 63, 0);
 
 
-		// / Entity camera = scene->CreateEntity("camera");
-		// / // omar.GetComponent<TransformComponent>().Transform = glm::translate(Mat4(1.0f), Vector3(1.5,-0.5,0));
-		// / camera.AddComponent<CameraComponent>();
+		Entity camera = scene->CreateEntity("camera");
+		camera.AddComponent<CameraComponent>();
+		camera.GetComponent<CameraComponent>().cam = new Camera(&m_Window);
+
+		Camera* cam = camera.GetComponent<CameraComponent>().cam;
+		cam->Position.z = -4;
 
 		float deltaTime, lastFrame = 0;
 		while (!glfwWindowShouldClose(m_Window.m_window))
@@ -183,7 +179,7 @@ namespace Jaguar {
 				deltaTime = currentFrame - lastFrame;
 				lastFrame = currentFrame;
 
-			
+				// TransformComponent& camTransform = camera.GetComponent<TransformComponent>();
 				if (glfwGetKey(m_Window.m_window, GLFW_KEY_D))
 				{
 					cam->Position.x -= deltaTime * 10;
@@ -210,7 +206,6 @@ namespace Jaguar {
 				}
 			}
 
-			Renderer::BeginScene(cam);
 			scene->OnUpdate(deltaTime);
 
 			// old-new move
