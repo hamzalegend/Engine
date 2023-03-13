@@ -9,6 +9,7 @@ namespace Jaguar
 	class Entity
 	{
 	public:
+		Entity() = default;
 		Entity(entt::entity EntityHandle, Scene* Scene)
 			:m_EntityHandle(EntityHandle), m_Scene(Scene)
 		{

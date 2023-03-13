@@ -3,15 +3,16 @@
 #include "Log/log.h"
 
 #include "Renderer/Renderer.h"
-#include "Camera/Camera.h"
+// #include "Camera/Camera.h"
 
 #include <Jaguar/Scene/Scene.h>
 #include <Jaguar/Scene/Components.h>
 #include <Jaguar/Scene/Entity.h>
-#include <iostream>
+
+#include "Input/Input.h"
 
 namespace Jaguar {
-
+	class Camera;
 	/*
 	float verticesCube[] = {
 		// positions          // normals           // texture coords
@@ -59,14 +60,16 @@ namespace Jaguar {
 	};
 	*/
 
-	Window m_Window;
-	// Camera* cam = new Camera(&m_Window);
 	Scene* scene = new Scene;
+
+	Application* Application::s_Instance = nullptr;
 
 	Application::Application()
 	{
-		
-		m_Window.Create(Vector2(600, 600), "Hello OpenGL");
+		JR_CORE_ASSERT(s_Instance, "Application already exists")
+		s_Instance = this;
+		m_Window = new Window;
+		m_Window->Create(Vector2(600, 600), "Hello OpenGL");
 
 		Renderer::Init(Renderer::API::OpenGL);
 	}
@@ -101,7 +104,7 @@ namespace Jaguar {
 
 	void framebuffer_size_callback(GLFWwindow* Window, int width, int height)
 	{
-		m_Window.Resize(Vector2(width, height));
+		Application::Get().GetWindow()->Resize(Vector2(width, height));
 	}
 
 	/*
@@ -150,7 +153,7 @@ namespace Jaguar {
 
 	void Application::Run()
 	{
-		glfwSetFramebufferSizeCallback(m_Window.m_window, framebuffer_size_callback);
+		glfwSetFramebufferSizeCallback(m_Window->m_window, framebuffer_size_callback);
 		// glfwSetCursorPosCallback(window.m_window, mouse_callback);
 
 		Entity e = scene->CreateEntity("Square");
@@ -159,50 +162,51 @@ namespace Jaguar {
 		e.GetComponent<MeshRendererComponent>().mesh.Vertices = Vertices;
 		e.GetComponent<MeshRendererComponent>().mesh.indices = indices;
 		e.GetComponent<MeshRendererComponent>().mesh.color = Vector4(25, 52, 63, 0);
-
-
+		
+		
 		Entity camera = scene->CreateEntity("camera");
 		camera.AddComponent<CameraComponent>();
-		camera.GetComponent<CameraComponent>().cam = new Camera(&m_Window);
-
+		camera.GetComponent<CameraComponent>().cam = new Camera();
 		Camera* cam = camera.GetComponent<CameraComponent>().cam;
-		cam->Position.z = -4;
+		cam->Transform = &camera.GetComponent<TransformComponent>();
+
 
 		float deltaTime, lastFrame = 0;
-		while (!glfwWindowShouldClose(m_Window.m_window))
+		while (!glfwWindowShouldClose(m_Window->m_window))
 		{
-			m_Window.Refresh();
-			
-			// Move Player
+			m_Window->Refresh();
+			// DeltaTime
 			{
 				float currentFrame = glfwGetTime();
 				deltaTime = currentFrame - lastFrame;
 				lastFrame = currentFrame;
-
-				// TransformComponent& camTransform = camera.GetComponent<TransformComponent>();
-				if (glfwGetKey(m_Window.m_window, GLFW_KEY_D))
+			}
+			// Move Player
+			{
+				TransformComponent& camTransform = camera.GetComponent<TransformComponent>();
+				if (Input::GetKey(GLFW_KEY_D))
 				{
-					cam->Position.x -= deltaTime * 10;
+					camTransform.Position.x -= deltaTime * 10;
 				}
-				else if (glfwGetKey(m_Window.m_window, GLFW_KEY_A))
+				else if (Input::GetKey(GLFW_KEY_A))
 				{
-					cam->Position.x += deltaTime * 10;
+					camTransform.Position.x += deltaTime * 10;
 				}
-				else if (glfwGetKey(m_Window.m_window, GLFW_KEY_W))
+				else if (Input::GetKey(GLFW_KEY_W))
 				{
-					cam->Position.z += deltaTime * 10;
+					camTransform.Position.z += deltaTime * 10;
 				}
-				else if (glfwGetKey(m_Window.m_window, GLFW_KEY_S))
+				else if (Input::GetKey(GLFW_KEY_S))
 				{
-					cam->Position.z -= deltaTime * 10;
+					camTransform.Position.z -= deltaTime * 10;
 				}
-				else if (glfwGetKey(m_Window.m_window, GLFW_KEY_E))
+				else if (Input::GetKey(GLFW_KEY_E))
 				{
-					cam->Position.y -= deltaTime * 10;
+					camTransform.Position.y -= deltaTime * 10;
 				}
-				else if (glfwGetKey(m_Window.m_window, GLFW_KEY_Q))
+				else if (Input::GetKey(GLFW_KEY_Q))
 				{
-					cam->Position.y += deltaTime * 10;
+					camTransform.Position.y += deltaTime * 10;
 				}
 			}
 

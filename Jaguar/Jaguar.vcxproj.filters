@@ -26,7 +26,6 @@
     <ClInclude Include="src\API\Buffer.h" />
     <ClInclude Include="src\Jaguar\Renderer\Renderer.h" />
     <ClInclude Include="src\API\Shader.h" />
-    <ClInclude Include="src\Jaguar\ECS\Object.h" />
     <ClInclude Include="src\Jaguar\Math.h" />
     <ClInclude Include="vendor\stb_Image\stb_img.h" />
     <ClInclude Include="src\API\Texture.h" />
@@ -45,6 +44,7 @@
     <ClInclude Include="src\Jaguar\Scene\Components.h" />
     <ClInclude Include="src\Jaguar\Scene\Entity.h" />
     <ClInclude Include="src\Jaguar\Renderer\Mesh.h" />
+    <ClInclude Include="src\Jaguar\Input\Input.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Jaguar\Application.cpp">
@@ -58,7 +58,6 @@
     <ClCompile Include="src\API\OpenGL\BufferGL.cpp" />
     <ClCompile Include="src\API\Buffer.cpp" />
     <ClCompile Include="src\API\Shader.cpp" />
-    <ClCompile Include="src\Jaguar\ECS\Object.cpp" />
     <ClCompile Include="vendor\stb_Image\stb_Image.cpp" />
     <ClCompile Include="src\API\Texture.cpp" />
     <ClCompile Include="src\API\OpenGL\TextureGL.cpp" />

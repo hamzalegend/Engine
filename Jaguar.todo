@@ -1,7 +1,5 @@
-1- make cam look around with mouse
- 2- start adding Entt at https://www.youtube.com/watch?v=-B1iu4QJTUc&list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&index=78&ab_channel=TheCherno
- 3- Create a nice scene and Entity class structure
- 4- support multiple objects and draw calls
- 5- etc
-
-*dont forget to check your trello at: https://trello.com/b/hf83UlLC/jaguar
+next:
+make application.cppp into a singlton
+make m_window prvae
+fix app::getwindow
+start with imgui and editor

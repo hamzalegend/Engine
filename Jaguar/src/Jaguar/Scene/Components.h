@@ -3,12 +3,13 @@
 #include "Jaguar/Math.h"
 
 #include "Jaguar/Renderer/Mesh.h"
-#include "Jaguar/Camera/Camera.h"
+// #include "Jaguar/Camera/Camera.h"
 
 #include <string>
 
 namespace Jaguar
 {
+	class Camera;
 	struct TransformComponent
 	{
 		Mat4 Transform;

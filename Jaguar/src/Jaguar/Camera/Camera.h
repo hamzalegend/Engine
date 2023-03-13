@@ -1,21 +1,23 @@
 #pragma once
 #include "Jaguar/Math.h"
 #include <Jaguar/Window/Window.h>
+#include <Jaguar/Scene/Components.h>
 
 namespace Jaguar
 {
 
-    class Camera
+    class  Camera
     {
     public:
-    	Camera(Window* window, float Fov=45);
+    	Camera(float Fov=45);
     	~Camera();
 
         void Update(float deltaTime);
     
     public:
-        Vector3 Position = Vector3(0.0f, 0.0f, 3.0f);;
-        Vector3 Rotation = Vector3(0,-90.0f, 0); // x:pich, y:yaw, z:roll
+        // Vector3 Position = Vector3(0.0f, 0.0f, 3.0f);;
+        // Vector3 Rotation = Vector3(0,-90.0f, 0); // x:pich, y:yaw, z:roll
+        TransformComponent* Transform;
         // Vector3 direction;
         Vector2 WindowDimentions;
     
@@ -44,7 +46,7 @@ namespace Jaguar
     
     private:    
 
-        Window* m_window;
+        // Window* m_window;
         float FOV;
     
         float NearPlane = 0.1f;

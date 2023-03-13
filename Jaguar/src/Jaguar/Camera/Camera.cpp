@@ -1,16 +1,17 @@
 #include "Camera.h"
+#include "Jaguar/Application.h"
 #include <Jaguar/Log/log.h>
 
 namespace Jaguar
 {
-
     
-    Camera::Camera(Window* window, float Fov)
-        :projection(Mat4(1.0f)), view(Mat4(1.0f)), m_window(window), FOV(Fov)
+    
+    Camera::Camera(float Fov)
+        :projection(Mat4(1.0f)), view(Mat4(1.0f)), FOV(Fov)
     {
         // if (s_MainCam == NULL)
         //     s_MainCam = this;
-        Position = Vector3(0.0f, 0.0f, 3.0f);
+        // Position = Vector3(0.0f, 0.0f, 3.0f);
         // s_MainCam = this;
         
     }
@@ -30,7 +31,7 @@ namespace Jaguar
     Mat4 Camera::GetViewMatrix()
     {
         view = Mat4(1.0f);
-        view = glm::translate(Mat4(1.0), Position); //placeholder // TODO ::
+        view = glm::translate(Mat4(1.0), Transform->Position); //placeholder // TODO ::
         // view = glm::rotate(view, Rotation.x, Vector3(1,0,0));
         // view = glm::rotate(view, Rotation.y, Vector3(0,1,0));
         // view = glm::rotate(view, Rotation.z, Vector3(0,0,1));
@@ -48,8 +49,9 @@ namespace Jaguar
     }
     Mat4 Camera::GetProjectionMatrix()
     {
+        Window* window = Application::Get().GetWindow();
         // projection = glm::perspective(glm::radians(45.0f), (float)WindowDimentions.x / (float)WindowDimentions.y, NearPlane, FarPlane);
-        projection = glm::perspective(glm::radians(FOV), (float)m_window->Dimentions.x/ (float)m_window->Dimentions.y, NearPlane, FarPlane); // placedholder // TODO ::
+        projection = glm::perspective(glm::radians(FOV), (float)window->Dimentions.x/ (float)window->Dimentions.y, NearPlane, FarPlane); // placedholder // TODO ::
         return projection;
     }
 }
