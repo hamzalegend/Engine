@@ -133,7 +133,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>JR_PLATFORM_WINDOWS;JR_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Jaguar\vendor\spdlog\include;..\Jaguar\src;..\Jaguar\API;$(SolutionDir)Jaguar\vendor;vendor\spdlog\include;$(SolutionDir)Vendor\glm\include;$(SolutionDir)Vendor\glfw\include;$(SolutionDir)Vendor\glew\include;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\Vendor\ImGui</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -152,7 +152,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>JR_PLATFORM_WINDOWS;JR_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Jaguar\vendor\spdlog\include;..\Jaguar\src;..\Jaguar\API;$(SolutionDir)Jaguar\vendor;vendor\spdlog\include;$(SolutionDir)Vendor\glm\include;$(SolutionDir)Vendor\glfw\include;$(SolutionDir)Vendor\glew\include;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\Vendor\ImGui</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -171,7 +171,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>JR_PLATFORM_WINDOWS;JR_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Jaguar\vendor\spdlog\include;..\Jaguar\src;..\Jaguar\API;$(SolutionDir)Jaguar\vendor;vendor\spdlog\include;$(SolutionDir)Vendor\glm\include;$(SolutionDir)Vendor\glfw\include;$(SolutionDir)Vendor\glew\include;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\Vendor\ImGui</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -194,7 +194,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>JR_PLATFORM_WINDOWS;JR_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Jaguar\vendor\spdlog\include;..\Jaguar\src;..\Jaguar\API;$(SolutionDir)Jaguar\vendor;vendor\spdlog\include;$(SolutionDir)Vendor\glm\include;$(SolutionDir)Vendor\glfw\include;$(SolutionDir)Vendor\glew\include;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\Vendor\ImGui</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -217,7 +217,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>JR_PLATFORM_WINDOWS;JR_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Jaguar\vendor\spdlog\include;..\Jaguar\src;..\Jaguar\API;$(SolutionDir)Jaguar\vendor;vendor\spdlog\include;$(SolutionDir)Vendor\glm\include;$(SolutionDir)Vendor\glfw\include;$(SolutionDir)Vendor\glew\include;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\Vendor\ImGui</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -240,7 +240,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>JR_PLATFORM_WINDOWS;JR_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Jaguar\vendor\spdlog\include;..\Jaguar\src;..\Jaguar\API;$(SolutionDir)Jaguar\vendor;vendor\spdlog\include;$(SolutionDir)Vendor\glm\include;$(SolutionDir)Vendor\glfw\include;$(SolutionDir)Vendor\glew\include;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\Vendor\ImGui</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>

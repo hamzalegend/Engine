@@ -6,14 +6,14 @@
 
 namespace Jaguar
 {
-	class Entity;
+	class JAGUAR_API Entity;
 	class JAGUAR_API Scene
 	{
 	public:
 		Scene();
 		~Scene();
 
-		Entity CreateEntity(std::string name = "New Entity");
+		Entity CreateEntity(const std::string& name = "New Entity");
 
 		void OnUpdate(float deltaTime);
 

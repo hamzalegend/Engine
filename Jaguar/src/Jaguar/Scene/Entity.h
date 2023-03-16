@@ -6,14 +6,16 @@
 
 namespace Jaguar
 {
-	class Entity
+	class JAGUAR_API Entity
 	{
 	public:
 		Entity() = default;
+		Entity(const Entity & other) = default;
 		Entity(entt::entity EntityHandle, Scene* Scene)
 			:m_EntityHandle(EntityHandle), m_Scene(Scene)
 		{
 		}
+
 		~Entity() {};
 
 		template<typename T, typename... Args>

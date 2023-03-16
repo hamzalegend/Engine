@@ -17,7 +17,7 @@ namespace Jaguar
 	{
 	}
 
-	void Layer::OnUpdate()
+	void Layer::OnUpdate(float DeltaTime)
 	{
 	}
 	

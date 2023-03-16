@@ -5,7 +5,7 @@
 namespace Jaguar
 {
 
-	class Input
+	class JAGUAR_API Input
 	{
 	public:
 		static bool GetKey(int key) { return glfwGetKey((GLFWwindow*)Application::Get().GetWindow()->GetNative(), key); };

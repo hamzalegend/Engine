@@ -4,12 +4,12 @@
 #include "API/Texture.h"
 
 #include "Jaguar/Math.h"
-
+#include "Jaguar/Core.h"
 #include <Vector>
 
 namespace Jaguar
 {
-	struct Mesh
+	struct JAGUAR_API Mesh
 	{
 	public:
 		std::vector<float> Vertices;

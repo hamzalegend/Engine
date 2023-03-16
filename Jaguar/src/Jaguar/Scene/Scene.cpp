@@ -24,7 +24,7 @@ namespace Jaguar
 
 	}
 
-	Entity Scene::CreateEntity(std::string name)
+	Entity Scene::CreateEntity(const std::string& name)
 	{
 		Entity e = { m_Registry.create(), this };
 		e.AddComponent<TagComponent>(name);
