@@ -14,11 +14,12 @@ namespace Jaguar
 		void Refresh();
 		void Resize(Vector2 WinDimentions); // TODO: [Very Important to implement] : glfwSetFramebufferSizeCallback(window.window, framebuffer_size_callback);
 		void Destroy();
+		void* GetNative() { return m_window; };
 		~Window();
 	
-		GLFWwindow* m_window;
 		Vector2 Dimentions;
 		std::string m_name;
 	private:
+		GLFWwindow* m_window;
 	};
 }

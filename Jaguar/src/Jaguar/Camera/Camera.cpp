@@ -1,11 +1,10 @@
 #include "Camera.h"
 #include "Jaguar/Application.h"
 #include <Jaguar/Log/log.h>
+#include "Jaguar/Core.h"
 
 namespace Jaguar
-{
-    
-    
+{    
     Camera::Camera(float Fov)
         :projection(Mat4(1.0f)), view(Mat4(1.0f)), FOV(Fov)
     {

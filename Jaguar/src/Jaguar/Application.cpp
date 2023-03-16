@@ -153,7 +153,7 @@ namespace Jaguar {
 
 	void Application::Run()
 	{
-		glfwSetFramebufferSizeCallback(m_Window->m_window, framebuffer_size_callback);
+		glfwSetFramebufferSizeCallback((GLFWwindow*)m_Window->GetNative(), framebuffer_size_callback);
 		// glfwSetCursorPosCallback(window.m_window, mouse_callback);
 
 		Entity e = scene->CreateEntity("Square");
@@ -170,9 +170,15 @@ namespace Jaguar {
 		Camera* cam = camera.GetComponent<CameraComponent>().cam;
 		cam->Transform = &camera.GetComponent<TransformComponent>();
 
+		// Attach Layers
+		for (Layer* layer : m_LayerStack)
+		{
+			if (layer->IsEnabled())
+				layer->OnAttach();
+		}
 
 		float deltaTime, lastFrame = 0;
-		while (!glfwWindowShouldClose(m_Window->m_window))
+		while (!glfwWindowShouldClose((GLFWwindow*)m_Window->GetNative()))
 		{
 			m_Window->Refresh();
 			// DeltaTime

@@ -303,6 +303,7 @@
     <ClInclude Include="src\Jaguar\Core.h" />
     <ClInclude Include="src\Jaguar\EntryPoint.h" />
     <ClInclude Include="src\Jaguar\Log\log.h" />
+    <ClInclude Include="src\Jaguar\test.h" />
     <ClInclude Include="src\Jaguar\Window\Window.h" />
     <ClInclude Include="vendor\Entt\entt.h" />
     <ClInclude Include="vendor\Entt\license" />

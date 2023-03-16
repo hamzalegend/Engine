@@ -1,5 +1,3 @@
 next:
-make application.cppp into a singlton
 make m_window prvae
-fix app::getwindow
 start with imgui and editor

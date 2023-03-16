@@ -3,10 +3,12 @@
 #include <Jaguar/Window/Window.h>
 #include <Jaguar/Scene/Components.h>
 
+#include "Jaguar/Core.h"
+
 namespace Jaguar
 {
 
-    class  Camera
+    class JAGUAR_API Camera
     {
     public:
     	Camera(float Fov=45);

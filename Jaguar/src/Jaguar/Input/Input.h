@@ -8,7 +8,7 @@ namespace Jaguar
 	class Input
 	{
 	public:
-		static bool GetKey(int key) { return glfwGetKey(Application::Get().GetWindow()->m_window, key); };
+		static bool GetKey(int key) { return glfwGetKey((GLFWwindow*)Application::Get().GetWindow()->GetNative(), key); };
 	private:
 	};
 }

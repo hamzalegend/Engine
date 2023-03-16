@@ -1,6 +1,6 @@
 #include "Buffer.h"
 #include "OpenGL/BufferGL.h"
-#include "../Jaguar/Renderer/Renderer.h"
+#include "Jaguar/Renderer/Renderer.h"
 
 namespace Jaguar {
 

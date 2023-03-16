@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Core.h"
-// #include "GLFW/glfw3.h"
 #include "Layer/Layer.h"
 #include "Layer/LayerStack.h"
 #include "Window/Window.h"

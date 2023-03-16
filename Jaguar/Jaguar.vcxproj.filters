@@ -45,6 +45,7 @@
     <ClInclude Include="src\Jaguar\Scene\Entity.h" />
     <ClInclude Include="src\Jaguar\Renderer\Mesh.h" />
     <ClInclude Include="src\Jaguar\Input\Input.h" />
+    <ClInclude Include="src\Jaguar\test.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Jaguar\Application.cpp">
