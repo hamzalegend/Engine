@@ -19,7 +19,7 @@
 
 namespace Jaguar
 {
-	std::vector<float> Vertices = {
+	std::vector<float> Verticess = {
 		// positions          // colors                // texture coords
 		 0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // top right
 		 0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f, 0.0f,   1.0f, 0.0f,   // bottom right
@@ -27,7 +27,7 @@ namespace Jaguar
 		-0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f, 0.0f,   0.0f, 1.0f    // top left 
 	};
 
-	std::vector<unsigned int> indices = {
+	std::vector<unsigned int> indicess = {
 		0, 1, 3,
 		1, 2, 3,
 	};
@@ -51,8 +51,8 @@ namespace Jaguar
 			{
 				e.GetComponent<TransformComponent>().Transform = Mat4(1.0f);
 				e.AddComponent<MeshRendererComponent>();
-				e.GetComponent<MeshRendererComponent>().mesh.Vertices = Vertices;
-				e.GetComponent<MeshRendererComponent>().mesh.indices = indices;
+				e.GetComponent<MeshRendererComponent>().mesh.Vertices = Verticess;
+				e.GetComponent<MeshRendererComponent>().mesh.indices = indicess;
 				e.GetComponent<MeshRendererComponent>().mesh.color = Vector4(25, 52, 63, 0);
 
 
@@ -173,16 +173,16 @@ namespace Jaguar
 	};
 }
 
-class Sandbox : public Jaguar::Application
+class EditorApplication : public Jaguar::Application
 {
 public:
-	Sandbox()
+	EditorApplication()
 	{
 		Jaguar::SandBoxLayer* sandBoxLayer = new Jaguar::SandBoxLayer();
 		sandBoxLayer->SetEnabled(true);
 		PushLayer(sandBoxLayer);
 	};
-	~Sandbox()
+	~EditorApplication()
 	{
 
 	};
@@ -191,7 +191,7 @@ public:
 
 Jaguar::Application* Jaguar::CreateApplication()
 {
-	return new Sandbox();
+	return new EditorApplication();
 }
 
 

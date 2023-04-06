@@ -5,7 +5,7 @@
 // Core
 	#include "Jaguar/Core.h"
 	#include "Jaguar/Application.h"	
-	#include "Jaguar/EntryPoint.h"
+
 	#include "Jaguar/Layer/Layer.h"
 
 
