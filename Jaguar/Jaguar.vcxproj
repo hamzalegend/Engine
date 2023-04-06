@@ -137,7 +137,7 @@
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;$(SolutionDir)GLFW\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;$(SolutionDir)GLFW\src\include;$(SolutionDir)ImGui\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -159,7 +159,7 @@
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;$(SolutionDir)GLFW\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;$(SolutionDir)GLFW\src\include;$(SolutionDir)ImGui\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -184,7 +184,7 @@
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;$(SolutionDir)GLFW\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;$(SolutionDir)GLFW\src\include;$(SolutionDir)ImGui\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -210,7 +210,7 @@
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;$(SolutionDir)GLFW\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;$(SolutionDir)GLFW\src\include;$(SolutionDir)ImGui\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -236,7 +236,7 @@
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;$(SolutionDir)GLFW\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;$(SolutionDir)GLFW\src\include;$(SolutionDir)ImGui\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -262,7 +262,7 @@
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;$(SolutionDir)GLFW\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;$(SolutionDir)GLFW\src\include;$(SolutionDir)ImGui\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -335,8 +335,8 @@
     <None Include="src\Jaguar\shader.fs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GLFW\GLFW.vcxproj">
-      <Project>{23cc45a1-bbac-4866-99fe-5eb7a875944c}</Project>
+    <ProjectReference Include="..\ImGui\ImGui.vcxproj">
+      <Project>{55271dad-e695-4b9c-9a0e-01d13b2024e8}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

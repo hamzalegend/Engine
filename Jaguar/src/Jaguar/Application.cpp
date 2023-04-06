@@ -11,6 +11,19 @@
 
 #include "Input/Input.h"
 
+// ==
+
+#include "imgui.h"
+#include "imgui_impl_glfw.h"
+#include "imgui_impl_opengl3.h"
+#include <stdio.h>
+
+#if defined(_MSC_VER) && (_MSC_VER >= 1900) && !defined(IMGUI_DISABLE_WIN32_FUNCTIONS)
+#pragma comment(lib, "legacy_stdio_definitions")
+#endif
+
+// ==
+
 namespace Jaguar {
 
 	Application* Application::s_Instance = nullptr;
@@ -61,6 +74,27 @@ namespace Jaguar {
 	{
 		glfwSetFramebufferSizeCallback((GLFWwindow*)m_Window->GetNative(), framebuffer_size_callback);
 		// glfwSetCursorPosCallback(window.m_window, mouse_callback);
+		
+
+		// ====================================================================================
+		// Setup Dear ImGui context
+		IMGUI_CHECKVERSION();
+		ImGui::CreateContext();
+
+		ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
+		ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
+		ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_DockingEnable;         // Enable Docking
+		ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;       // Enable Multi-Viewport / Platform Windows
+		ImGui::StyleColorsDark();
+		ImGui::GetStyle().WindowRounding = 0.0f;
+		ImGui::GetStyle().Colors[ImGuiCol_WindowBg].w = 1.0f;
+
+		ImGui_ImplGlfw_InitForOpenGL((GLFWwindow*)m_Window->GetNative(), true);
+		ImGui_ImplOpenGL3_Init("#version 330");
+
+		// ====================================================================================
+
+
 
 		// Attach Layers
 		for (Layer* layer : m_LayerStack)
@@ -68,7 +102,6 @@ namespace Jaguar {
 			if (layer->IsEnabled())
 				layer->OnAttach();
 		}
-
 		float deltaTime, lastFrame = 0;
 		while (!glfwWindowShouldClose((GLFWwindow*)m_Window->GetNative()))
 		{
@@ -81,6 +114,23 @@ namespace Jaguar {
 				lastFrame = currentFrame;
 			}
 
+			{
+				// Start the Dear ImGui frame
+				ImGui_ImplOpenGL3_NewFrame();
+				ImGui_ImplGlfw_NewFrame();
+				ImGui::NewFrame();
+				// 
+				ImGui::ShowDemoWindow(nullptr);
+				//
+				ImGui::Render();
+				ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+				//
+				GLFWwindow* backup_current_context = glfwGetCurrentContext();
+				ImGui::UpdatePlatformWindows();
+				ImGui::RenderPlatformWindowsDefault();
+				glfwMakeContextCurrent(backup_current_context);
+
+			}
 
 			// Update Layers
 			for (Layer* layer : m_LayerStack)
