@@ -133,7 +133,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>JR_PLATFORM_WINDOWS;JR_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;$(SolutionDir)GLFW\src\include;$(SolutionDir)ImGui\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;$(SolutionDir)GLFW\src\include;$(SolutionDir)Assimp\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -142,7 +142,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)ImGui\Build\x64;$(SolutionDir)GLFW\src\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Assimp\lib\Release;$(SolutionDir)GLFW\src\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;opengl32.lib;glfw3.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -151,7 +151,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>JR_PLATFORM_WINDOWS;JR_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;$(SolutionDir)GLFW\src\include;$(SolutionDir)ImGui\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;$(SolutionDir)GLFW\src\include;$(SolutionDir)Assimp\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -160,7 +160,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)ImGui\Build\x64;$(SolutionDir)GLFW\src\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Assimp\lib\Release;$(SolutionDir)GLFW\src\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;opengl32.lib;glfw3.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -169,7 +169,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>JR_PLATFORM_WINDOWS;JR_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;$(SolutionDir)GLFW\src\include;$(SolutionDir)ImGui\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;$(SolutionDir)GLFW\src\include;$(SolutionDir)Assimp\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -182,7 +182,7 @@
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(SolutionDir)ImGui\Build\x64;$(SolutionDir)GLFW\src\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Assimp\lib\Release;$(SolutionDir)GLFW\src\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;opengl32.lib;glfw3.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -191,7 +191,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>JR_PLATFORM_WINDOWS;JR_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;$(SolutionDir)GLFW\src\include;$(SolutionDir)ImGui\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;$(SolutionDir)GLFW\src\include;$(SolutionDir)Assimp\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -204,7 +204,7 @@
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(SolutionDir)ImGui\Build\x64;$(SolutionDir)GLFW\src\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Assimp\lib\Release;$(SolutionDir)GLFW\src\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;opengl32.lib;glfw3.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -213,7 +213,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>JR_PLATFORM_WINDOWS;JR_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;$(SolutionDir)GLFW\src\include;$(SolutionDir)ImGui\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;$(SolutionDir)GLFW\src\include;$(SolutionDir)Assimp\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -226,7 +226,7 @@
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(SolutionDir)ImGui\Build\x64;$(SolutionDir)GLFW\src\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Assimp\lib\Release;$(SolutionDir)GLFW\src\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;opengl32.lib;glfw3.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -235,7 +235,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>JR_PLATFORM_WINDOWS;JR_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;$(SolutionDir)GLFW\src\include;$(SolutionDir)ImGui\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\;$(SolutionDir)Jaguar\vendor;$(SolutionDir)Jaguar\src;$(SolutionDir)Jaguar\vendor\spdlog\include;$(SolutionDir)GLFW\src\include;$(SolutionDir)Assimp\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -248,7 +248,7 @@
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(SolutionDir)ImGui\Build\x64;$(SolutionDir)GLFW\src\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Assimp\lib\Release;$(SolutionDir)GLFW\src\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;opengl32.lib;glfw3.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
